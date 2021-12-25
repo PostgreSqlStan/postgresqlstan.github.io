@@ -1,6 +1,8 @@
 ---
 title: "My first post!"
 date: 2021-12-25
+last_modified_at: 2021-12-25
+
 categories:
   - blog
 tags:
