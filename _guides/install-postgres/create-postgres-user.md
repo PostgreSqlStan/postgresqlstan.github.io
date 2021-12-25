@@ -1,4 +1,3 @@
-[Install Postgres from Source on MacOS/](./)
 # Create a postgres user on macOS
 _Tested on macOS 11 (Big Sur) and 12 (Monterey)_
 
