@@ -1,6 +1,6 @@
 ---
 title: "Post: This is great!"
-last_modified_at: Dec 25 08:04:54 CST 2021
+last_modified_at: Dec 25 2021 08:04:54
 categories:
   - Blog
 tags:
