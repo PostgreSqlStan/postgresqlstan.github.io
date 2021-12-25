@@ -1,5 +1,6 @@
 ---
 title: "Guides"
+layout: single
 last_modified_at: Dec 25 2021
 ---
 
