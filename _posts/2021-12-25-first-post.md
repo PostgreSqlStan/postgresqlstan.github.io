@@ -7,4 +7,4 @@ tags:
   - Jekyll
 ---
 
-This is my blog post using the Jekyll Minimal Mistakes theme on Github Pages.
+My blog post using the Jekyll Minimal Mistakes theme on Github Pages.
