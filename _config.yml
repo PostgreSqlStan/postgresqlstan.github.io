@@ -57,7 +57,7 @@ plugins:
 author:
   name   : "PostgreSQL Stan"
   avatar : "/assets/images/bio-photo.jpg"
-  bio    : "Data wrangling on macOS with PostgreSQL and other command line tools"
+  bio    : "Command line data wrangling with PostgreSQL on macOS."
   links:
     - label: "Website"
       icon: "fas fa-fw fa-link"
