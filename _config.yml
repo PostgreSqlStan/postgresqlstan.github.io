@@ -16,8 +16,8 @@
 title: PostgreSQLStan's Pages
 description: >- # this means to ignore newlines until "baseurl:"
   Documenting my data wrangling adventures with PostgreSQL on macOS.
-twitter_username: postgresqlstan
-github_username: postgresqlstan
+twitter_username: "PostgreSqlStan"
+github_username: "PostgreSqlStan"
 minimal_mistakes_skin: default
 search: true
 
@@ -55,34 +55,28 @@ plugins:
   - jekyll-include-cache
 
 author:
-  name   : "First Lastname"
+  name   : "PostgreSQL Stan"
   avatar : "/assets/images/bio-photo.jpg"
-  bio    : "My awesome biography constrained to a sentence or two goes here."
+  bio    : "Data wrangling on macOS with PostgreSQL and other command line tools"
   links:
     - label: "Website"
       icon: "fas fa-fw fa-link"
-      url: "https://"
+      url: "https://postgresqlstan.github.io"
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/"
+      url: "https://twitter.com/postgresqlstan"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/"
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
-      url: "https://instagram.com/"
+      url: "https://github.com/postgresqlstan"
 
 footer:
   links:
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
-      url: "https://twitter.com/"
+      url: "https://twitter.com/postgresqlstan"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
-      url: "https://github.com/"
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
-      url: "https://instagram.com/"
+      url: "https://github.com/postgresqlstan"
 
 defaults:
   # _posts
