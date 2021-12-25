@@ -7,4 +7,4 @@ After using PostgreSQL on macOS for data wrangling on macOS for around twenty ye
 
 This site uses the [Minimal Mistakes](https://mmistakes.github.io/minimal-mistakes/) Jekyll theme and is hosted by [Github pages](https://pages.github.com).
 
-Comments are welcome. Contact me via Twitter.
+Comments are welcome. Contact me publically or by direct message via [Twitter](https://twitter.com/postgresqlstan).
