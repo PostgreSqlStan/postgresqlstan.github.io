@@ -1,4 +1,3 @@
-[Install Postgres from Source on MacOS/](./)
 # Start the PostgreSQL server automatically on macOS
 _Tested on macOS 11 (Big Sur) and 12 (Monterey)_
 
