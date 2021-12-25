@@ -1,4 +1,3 @@
-[Install Postgres from Source on MacOS/](./)
 # Start the server and configure your environment
 
 ## Create the data directory
