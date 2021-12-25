@@ -1,5 +1,5 @@
 ---
-title: "Guides, Tips, and Useful Information"
+title: "Guides"
 last_modified_at: Dec 25 2021
 ---
 
