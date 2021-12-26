@@ -101,4 +101,7 @@ collections:
   guides:
     output: true
     permalink: /:collection/:name
+  
+header:
+  image: /assets/images/header.png
       
