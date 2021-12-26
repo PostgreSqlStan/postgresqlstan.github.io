@@ -85,7 +85,7 @@ defaults:
   # _guides
   - scope:
       path: ""
-      type: pages
+      type: guides
     values:
       layout: single
       author_profile: true
