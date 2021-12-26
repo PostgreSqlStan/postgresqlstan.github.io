@@ -1,6 +1,6 @@
 title: Data Wrangling with PostgreSQL
 description: >- # this means to ignore newlines until "baseurl:"
-  Documenting my data wrangling adventures with PostgreSQL and other command line tools on macOS.
+  Data wrangling with PostgreSQL on macOS
 twitter_username: "PostgreSqlStan"
 github_username: "PostgreSqlStan"
 minimal_mistakes_skin: dark
@@ -42,7 +42,7 @@ plugins:
 author:
   name   : "PostgreSQL Stan"
   avatar : "/assets/images/bio-photo.jpg"
-  bio    : "Sharing my data wrangling adventures with PostgreSQL on macOS."
+  bio    : "Sharing my command line data wrangling adventures with the world."
   location: "Tulsa, OK"
   links:
     - label: "Twitter"
