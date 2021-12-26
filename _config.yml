@@ -84,7 +84,7 @@ defaults:
       show_date: true
   # _guides
   - scope:
-      path: "_guides"
+      path: ""
       type: pages
     values:
       layout: single
@@ -100,6 +100,4 @@ tag_archive:
 collections:
   guides:
     output: true
-    install-postgres:
-      output: true
       
