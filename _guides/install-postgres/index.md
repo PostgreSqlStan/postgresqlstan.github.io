@@ -1,5 +1,7 @@
 ---
 title: "Install PostgreSQL from source on macOS"
+permalink: /guides/install-postgres/
+
 last_modified_at: Dec 25 2021
 ---
 
