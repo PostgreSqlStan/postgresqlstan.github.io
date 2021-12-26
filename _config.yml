@@ -100,4 +100,5 @@ tag_archive:
 collections:
   guides:
     output: true
+    permalink: /:collection/:name
       
