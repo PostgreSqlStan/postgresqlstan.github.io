@@ -3,8 +3,6 @@ title: "Install PostgreSQL from source on macOS"
 last_modified_at: Dec 25 2021
 ---
 
-# Install PostgreSQL from source on macOS
-
 The sensible way to install Postgres on a Mac is to use one of the recommended [macOS package installers](https://www.postgresql.org/download/macosx).
 Building from source is “only recommended for people developing PostgreSQL or extensions.” 
 
