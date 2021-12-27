@@ -8,7 +8,7 @@ tags:
   - Collections
 ---
 
-I'm still impressed.
+I'm impressed.
 
 Before today I had no experience with ruby. A few hours later, using only the web interface, I have a decent looking, functional blog using [GitHub pages](https://pages.github.com) with [Jekyll](https://jekyllrb.com) and the [Minimal Mistakes](https://mmistakes.github.io/minimal-mistakes/) theme.
 
