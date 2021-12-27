@@ -3,7 +3,7 @@ permalink: /about/
 title: "About this Site"
 ---
 
-I created this website to share knowledge and thoughts about command line software I use on macOS for data wrangling and web publishing. 
+I created this website to share knowledge and thoughts about CLI software used for data wrangling and web publishing. 
 
 Topics include PostgreSQL, git, Jekyll, Python, shell commands and scripting, as well as directions for compiling and installing open source software on macOS without relying on package managers.
 
