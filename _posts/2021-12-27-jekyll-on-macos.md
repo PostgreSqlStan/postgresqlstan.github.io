@@ -55,6 +55,8 @@ The [troubleshooting](https://jekyllrb.com/docs/troubleshooting/) guide suggeste
 gem update --user-install
 ```
 
+I was able to install jekyll after this update.
+
 ### jekyll Does Not Run
 
 
@@ -67,7 +69,7 @@ Searching for `library.rb:275`, I managed to find a [page](https://github.com/ff
 gem install --user-install ffi -- --enable-libffi-alloc
 ```
 
-I don't really know how that fixes anything, but jekyll ran without errors afterwards.
+I not sure how, but it fixed the problem and I was able to run jekyll.
 
 
 
