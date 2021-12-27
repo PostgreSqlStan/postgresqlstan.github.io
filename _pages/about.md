@@ -1,8 +1,17 @@
 ---
 permalink: /about/
-title: "About"
+title: "About this Site"
 ---
 
-After using PostgreSQL on macOS for data wrangling on macOS for around twenty years and have finally decided to keep my notes in a public repository.
+I created this website to share knowledge and thoughts about command line software I use on macOS for data wrangling and web publishing. 
 
-Comments are welcome. Contact me on [Twitter](https://twitter.com/postgresqlstan).
+Topics include PostgreSQL, git, Jekyll, Python, shell commands and scripting, as well as directions for compiling and installing open source software on macOS without relying on package managers.
+
+I would be delighted if anyone else finds this information useful. Please, contact me on [Twitter](https://twitter.com/PostgreSQLStan) if you have any questions or comments.
+
+{% capture notice-2 %}
+This site is built with [Git Pages](https://pages.github.com), which uses [Jekyll](https://jekyllrb.com) to generate web content from a [public repository](https://github.com/PostgreSqlStan/postgresqlstan.github.io). The appearance is managed by the [Minimal Mistakes](https://mmistakes.github.io/minimal-mistakes/) theme.
+{% endcapture %}
+
+<div class="notice">{{ notice-2 | markdownify }}</div>
+
