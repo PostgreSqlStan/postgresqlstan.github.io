@@ -1,5 +1,4 @@
 # Start the PostgreSQL server automatically on macOS
-_Tested on macOS 11 (Big Sur) and 12 (Monterey)_
 
 The [contrib/start-scripts/macos](https://github.com/postgres/postgres/tree/master/contrib/start-scripts/macos) directory of the source code contains files and instructions to automatically launch the PostgreSQL server at system start on macOS.
 
@@ -11,8 +10,8 @@ sudo cp postgres-wrapper.sh /usr/local/pgsql/bin
 sudo cp org.postgresql.postgres.plist /Library/LaunchDaemons/
 ```
 
+To test without restarting your computer, load the plist with `launchctl`:
 
-To test without restarting the system, load the plist with `launchctl`:
 ```
 sudo launchctl load /Library/LaunchDaemons/org.postgresql.postgres.plist
 ```

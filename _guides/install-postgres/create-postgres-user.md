@@ -1,5 +1,4 @@
 # Create a postgres user on macOS
-_Tested on macOS 11 (Big Sur) and 12 (Monterey)_
 
 The generic Unix command to create a postgres user doesn’t work on a Mac:
 
