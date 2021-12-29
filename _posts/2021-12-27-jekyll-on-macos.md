@@ -60,7 +60,7 @@ I was able to install jekyll after this update.
 ### jekyll Does Not Run
 
 
-Following directions in the [tutorial](https://jekyllrb.com/docs/step-by-step/01-setup/), when I tried to run jekyll I got an error involving `library.rb:275`.
+Following directions in the Jekyll [Step by Step Tutorial](https://jekyllrb.com/docs/step-by-step/01-setup/), when I tried to run jekyll I got an error involving `library.rb:275`.
 
 ### The solution
 Searching for `library.rb:275`, I managed to find a [page](https://github.com/ffi/ffi/issues/864) where several users reported success with a suggested fix for the same error:
@@ -71,5 +71,4 @@ gem install --user-install ffi -- --enable-libffi-alloc
 
 I not sure how, but it fixed the problem and I was able to run jekyll.
 
-
-
+!["I did it!"](/assets/images/i-did-it.gif)
