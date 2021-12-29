@@ -1,6 +1,9 @@
 ---
 permalink: /about/
 title: "About this Site"
+header:
+  image: assets/images/ARP_2600.jpg
+  caption: "[Original by Esa Kotilainen](https://commons.wikimedia.org/wiki/File:ARP_2600_panel,_Energo_2011.jpg), [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/), via Wikimedia Commons"
 ---
 
 I created this site to share knowledge, tips, links and thoughts about command line software I use for web publishing, data wrangling, and other related tasks.
