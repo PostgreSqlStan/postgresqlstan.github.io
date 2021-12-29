@@ -1,6 +1,6 @@
 ---
 link: https://youtu.be/2sjqTHE0zok
-title:  The Missing Semester: Version Control [video]
+title:  Missing Semester – Version Control (video)
 categories:
   - git
   - CLI
