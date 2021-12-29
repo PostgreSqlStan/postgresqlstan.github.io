@@ -6,9 +6,9 @@ tags:
   - Jekyll
 ---
 
-Here are a couple of errors I encountered and managed to solve while trying to install Jekyll with the builtin version of ruby on macOS Montery.
+Here are a couple of errors I encountered and managed to solve while trying to install Jekyll with the builtin version of ruby on macOS Monterey.
 
-Environment: Macbook Air (M1, 2020) running macOS Monterey (12.1), ruby 2.6.8p205
+Environment: Macbook Air (M1, 2020) macOS Monterey (12.1), ruby 2.6.8p205
 {: .notice}
 
 ## The Short Version
