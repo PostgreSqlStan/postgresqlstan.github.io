@@ -1,11 +1,10 @@
 ---
 title: Jekyll - First Impressions
-category: blog
+category: Jekyll
 tags:
-  - Jekyll
   - Minimal Mistakes
   - GitHub Pages
-  - Collections
+  - Jekyll Collections
 ---
 
 I'm impressed.
