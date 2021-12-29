@@ -8,8 +8,6 @@ header:
 
 I created this site to share knowledge, tips, links and thoughts about command line software I use for web publishing, data wrangling, and other related tasks.
 
-[Topics](/tags/) include git, Jekyll, PostgreSQL, Python, shell commands and scripting, and directions for installing some of the open source software I use on macOS.
-
 Hopefully, others find some of this information useful. *If not, at least I'll be able to find to my notes the next time I need to repeat a task documented here.* 😁
 
 Please, contact me on [Twitter](https://twitter.com/PostgreSQLStan) if you have any questions or comments.
