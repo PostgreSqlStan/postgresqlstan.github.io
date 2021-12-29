@@ -1,8 +1,8 @@
 ---
+last_modified_at: 2021-12-29
 title: "Installing Jekyll on macOS Monterey"
 categories:
   - macOS
-tags:
   - Jekyll
 ---
 
