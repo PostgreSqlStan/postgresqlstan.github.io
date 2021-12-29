@@ -1,6 +1,6 @@
-title: CLI Data Wrangling on macOS
+title: CLI Data Wrangling
 description: >- # this means to ignore newlines until "baseurl:"
-  "Command line data wrangling on macOS"
+  "Notes about command line data wrangling."
 twitter_username: "PostgreSqlStan"
 github_username: "PostgreSqlStan"
 minimal_mistakes_skin: dark
@@ -76,20 +76,19 @@ defaults:
       show_date: true
   # _pages
   - scope:
-      path: "_pages"
+      path: ""
       type: pages
     values:
       layout: single
       author_profile: true
-      show_date: true
   # _guides
-  - scope:
-      path: ""
-      type: guides
-    values:
-      layout: single
-      author_profile: true
-      show_date: true
+  # - scope:
+  #     path: ""
+  #     type: guides
+  #   values:
+  #     layout: single
+  #     author_profile: true
+  #     show_date: true
 category_archive:
   type: liquid
   path: /categories/
