@@ -1,9 +1,24 @@
 main:
   - title: "About"
     url: /about/
-  - title: "Archive"
-    url: /posts/
+    description: "Why and how this site is built"
+  - title: "Guides"
+    url: /guides/
+    description: "Step by step guides"
   - title: "Categories"
     url: /categories/
   - title: "Tags"
     url: /tags/
+
+guides:
+  - title: "Install PostgreSQL on macOS"
+    url: /guides/install-postgres/
+    children:
+    - title: "Download and Install"
+      url: /guides/install-postgres/install/
+    - title: "Create postgres user"
+      url: /guides/install-postgres/create-postgres-user/
+    - title: "Post-installation"
+      url: /guides/install-postgres/post-install/
+    - title: "Automating server startup"
+      url: /guides/install-postgres/launchctl/

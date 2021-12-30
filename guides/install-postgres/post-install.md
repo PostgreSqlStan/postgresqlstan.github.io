@@ -1,10 +1,17 @@
-# Start the server and configure your environment
+---
+title: Post-installation
+date: 2021-12-29
+last_modified_at: 2021-12-29
+sidebar:
+  nav: guides
+author_profile: false
+---
 
 ## Create the data directory
 
 Create a Postgres data directory and change its user and group ownership to postgres:
 
-```
+```shell
 sudo mkdir /usr/local/pgsql/data
 sudo chown postgres:postgres /usr/local/pgsql/data
 ```
@@ -13,7 +20,7 @@ sudo chown postgres:postgres /usr/local/pgsql/data
 
 Run `initdb` as the postgres user to initialize the data directory:
 
-```
+```shell
 sudo -u postgres /usr/local/pgsql/bin/initdb -D /usr/local/pgsql/data
 ```
 
@@ -21,7 +28,7 @@ sudo -u postgres /usr/local/pgsql/bin/initdb -D /usr/local/pgsql/data
 
 Run `pg_ctl` as the postgres user to start the server, specifying the location of the data directory and the log. (Backslashes "\\" are used to continue a command to the next line.)
 
-```
+```shell
 sudo -u postgres /usr/local/pgsql/bin/pg_ctl \
      -D /usr/local/pgsql/data \
      -l /usr/local/pgsql/data/logfile start 
@@ -29,13 +36,13 @@ sudo -u postgres /usr/local/pgsql/bin/pg_ctl \
 
 Hopefully, you’ll see this message:
 
-```
+```shell
 waiting for server to start.... done
 server started
 ```
 
 To stop the server:
-```
+```shell
 sudo -u postgres /usr/local/pgsql/bin/pg_ctl \
      -D /usr/local/pgsql/data stop 
 ```
@@ -62,12 +69,12 @@ export MANPATH
 
 The default settings allow the postgres user to connect to a server running on the same computer without a password.
 
-```
+```shell
 psql -U postgres
 ```
 
 You should be automatically connected to a database (also named postgres) and see a something like this:
-```
+```sql
 psql (14.1)
 Type "help" for help.
 
@@ -78,9 +85,9 @@ My local installation of Postgres is used for learning and experimenting and doe
 
 Use `ALTER USER` command to set the password if needed:
 
-```
+```sql
 postgres=# ALTER USER postgres PASSWORD 'myPassword';
 ALTER ROLE
 ```
 ---
-Next: [Start the Server Automatically](launchctl.md)
+[Next: Start the Server Automatically](launchctl.md){: .btn .btn--info}

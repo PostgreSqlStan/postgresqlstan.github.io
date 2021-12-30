@@ -1,21 +1,18 @@
 ---
 title: "Build and install Postgres on macOS"
+date: 2021-12-29
+last_modified_at: 2021-12-29
+sidebar:
+  nav: guides
+author_profile: false
 ---
-# Build and install Postgres on macOS
 
-_The XCode Command Line Developer Tools are required to compile programs from the terminal on macOS._
+{% capture notice-1 %}**Prerequisite: XCode Command Line Tools**
 
-Use the `xcode-select` command to see if they're already installed:
+Type `gcc -v` in the terminal and a dialog to download the Xcode Command Line Tools will appear if they're not already installed.
+{% endcapture %}
 
-```
-xcode-select -v
-```
-
-If not installed, use the `--install` option to iniatiate a dialog to begin the download.
-
-```
-xcode-select --install
-```
+<div class="notice">{{ notice-1 | markdownify }}</div>
 
 ## Download the source code
 
@@ -63,4 +60,4 @@ sudo make install-docs
 ```
 
 ---
-Next: [Create a postgres user](create-postgres-user.md)
+[Next: Create a postgres user](create-postgres-user.md){: .btn .btn--info}
