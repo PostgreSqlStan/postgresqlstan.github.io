@@ -1,8 +1,7 @@
 ---
 link: https://youtube.com/playlist?list=PLyzOVJj3bHQuloKGG59rS43e29ro7I57J
 title: MIT – Missing Semester IAP 2020 [video playlist]
-categories:
-  - CLI
+category: CLI
 tags:
   - Video
   - Links

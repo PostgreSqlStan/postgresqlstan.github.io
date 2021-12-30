@@ -1,8 +1,7 @@
 ---
 link: https://www.taniarascia.com/how-to-use-the-command-line-for-apple-macos-and-linux/
 title: "Command Line Tutorial: Usage in Linux and macOS"
-categories:
-  - CLI
+category: CLI
 tags:
   - Links
 ---
