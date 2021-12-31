@@ -1,6 +1,6 @@
-title: Command Line Notes
+title: CLI Notes
 description: >- # this means to ignore newlines until "baseurl:"
-  "Notes about command line web development, data wrangling, and related tasks."
+  "Notes about command line tools I use on macOS, including PostgreSQL, Python, Jekyll and shell scripting."
 twitter_username: "PostgreSqlStan"
 github_username: "PostgreSqlStan"
 minimal_mistakes_skin: dark
@@ -42,7 +42,7 @@ plugins:
 author:
   name   : "PostgreSQL Stan"
   avatar : "/assets/images/bio-photo.jpg"
-  bio    : "Sharing my notes about command line data wrangling on macOS. ☕️"
+  bio    : "Blogging my adventures with CLI software on macOS."
   location: "Tulsa, OK"
   links:
     - label: "Twitter"
@@ -70,7 +70,7 @@ defaults:
       layout: single
       author_profile: true
       read_time: true
-      comments: true
+      comments: false
       share: true
       related: true
       show_date: true
@@ -80,7 +80,7 @@ defaults:
       type: pages
     values:
       layout: single
-      author_profile: true
+      author_profile: false
   # _guides
   - scope:
       path: "/guides/"
@@ -88,6 +88,7 @@ defaults:
     values:
       layout: archive
       show_date: true
+      author_profile: false
 
 category_archive:
   type: liquid
@@ -98,6 +99,5 @@ tag_archive:
 
 
 logo: "assets/images/logo.jpg"
-show_drafts: true
 repository: "postgresql/postgresql.github.io"
-
+date_format: "%Y-%m-%d"

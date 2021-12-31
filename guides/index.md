@@ -1,8 +1,7 @@
 ---
 title: "Guides"
 header:
-  image: /assets/images/guides.jpeg
-  caption: "[Original: Benh *LIEU SONG*](https://commons.wikimedia.org/wiki/File:Paris_75005_Quai_de_Montebello_Bouquinistes_20071014.jpg), [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0), via Wikimedia Commons"
+  image: /assets/headers/1-3.jpeg
+  caption: "[Original by Brucewaters](https://commons.wikimedia.org/wiki/File:M31,_the_Andromeda_Galaxy,_Killarney_Provincial_Park_Observatory.jpg), [CC BY 4.0](https://creativecommons.org/licenses/by/4.0), via Wikimedia Commons"
 ---
-
 * How to [Install PostgreSQL from source on macOS](./install-postgres/)

@@ -3,6 +3,6 @@ title: "Posts by Tag"
 permalink: /tags/
 layout: tags
 header:
-  image: /assets/images/Kebabistan_Poznan.jpg
-  caption: "[Original by: MOs810](https://commons.wikimedia.org/wiki/File:Kebabistan_Poznan.jpg), [CC BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0), via Wikimedia Commons"
+  image: /assets/headers/2-2.jpeg
+  caption: "[Original by: Alchemist-hp](https://commons.wikimedia.org/wiki/File:Hafnium_pellets_with_a_thin_oxide_layer.jpg), [FAL](https://en.wikipedia.org/wiki/Free_Art_License), via Wikimedia Commons]"
 ---
