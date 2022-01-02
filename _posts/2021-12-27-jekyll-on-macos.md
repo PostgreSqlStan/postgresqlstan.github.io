@@ -4,6 +4,8 @@ title: "Installing Jekyll on macOS Monterey"
 category: Jekyll
 tags:
   - macOS
+header:
+  teaser: /assets/teasers/cat-laptop.jpg
 ---
 
 Here are a couple of errors I encountered and managed to solve while trying to install Jekyll with the builtin version of ruby on macOS Monterey.

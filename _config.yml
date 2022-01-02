@@ -99,5 +99,10 @@ tag_archive:
 
 
 logo: "assets/images/logo.jpg"
-repository: "postgresql/postgresql.github.io"
+repository: PostgreSqlStan/postgresqlstan.github.io
 date_format: "%Y-%m-%d"
+exclude:
+  - README.md
+  - LICENSE
+
+# show_drafts: true

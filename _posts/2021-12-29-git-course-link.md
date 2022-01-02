@@ -6,5 +6,7 @@ tags:
   - Links
   - Video
   - git
+header:
+  teaser: /assets/teasers/ms-git.jpg
 ---
 This is a great introduction to git which helped me tremendously with a clear explanation of what's going on under the hood.

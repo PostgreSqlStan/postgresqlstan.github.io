@@ -5,5 +5,7 @@ category: Jekyll
 tags:
   - Links
   - Minimal Mistakes
+header:
+  teaser: /assets/teasers/mm-notices.jpg
 ---
 Minimal Mistakes **Notices** examples.

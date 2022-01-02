@@ -7,6 +7,8 @@ tags:
   - Minimal Mistakes
   - GitHub Pages
   - Jekyll Collections
+header:
+  teaser: /assets/teasers/cat-laptop.jpg
 ---
 
 I'm impressed.

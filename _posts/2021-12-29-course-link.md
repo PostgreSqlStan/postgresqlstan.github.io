@@ -5,6 +5,8 @@ category: CLI
 tags:
   - Video
   - Links
+header:
+  teaser: /assets/teasers/missing-semester.jpg
 ---
 
 "We’ll teach you how to master the command-line, use a powerful text editor, use fancy features of version control systems, and much more!" (videos)
