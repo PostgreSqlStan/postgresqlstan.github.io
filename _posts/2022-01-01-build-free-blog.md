@@ -10,7 +10,7 @@ tags:
 excerpt: "Step by step directions for building a blog website using a web browser and GitHub Pages"
 toc: true
 header:
-  teaser: /assets/teasers/cat-laptop.jpg
+  teaser: /assets/teasers/build-a-blog.jpg
 ---
 
 Using only a web browser, with [GitHub Pages](https://pages.github.com) and the [Minimal Mistakes](https://mmistakes.github.io/minimal-mistakes/) starter template, you can quickly and easily create a website with:

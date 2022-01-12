@@ -10,9 +10,8 @@ author_profile: false
 {% capture notice-1 %}**Prerequisite: XCode Command Line Tools**
 
 Type `gcc -v` in the terminal and a dialog to download the Xcode Command Line Tools will appear if they're not already installed.
-{% endcapture %}
 
-<div class="notice">{{ notice-1 | markdownify }}</div>
+{% endcapture %}<div class="notice">{{ notice-1 | markdownify }}</div>
 
 ## Download the source code
 
