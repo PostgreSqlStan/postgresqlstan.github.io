@@ -47,7 +47,11 @@ fc -ARWI [ filename ]
 
 To see how much easier this is, try locating the same information with `man history`. (Go ahead. I'll wait.)
 
+*But, wait, there's more.*
+
 ### Invoke run-help with ESC-h
+
+Verify bindings for the `run-help` function:
 
 ```shell
 %  bindkey | grep run-help
@@ -55,7 +59,7 @@ To see how much easier this is, try locating the same information with `man hist
 "^[h" run-help
 ```
 
-By default, `run-help` can also be invoked by pressing "ESC" then "h" after typing any command (without pressing return).
+The `run-help` function can also be invoked by pressing "ESC" then "h" after typing any command (without pressing return).
 
 ## Credit
 
