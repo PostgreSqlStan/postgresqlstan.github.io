@@ -1,5 +1,4 @@
 ---
-last_modified_at: 2022-01-14
 title: "zsh Tip: run-help is extremely helpful"
 category: CLI
 tags:
@@ -7,6 +6,8 @@ tags:
   - zsh
 excerpt: "Configure zsh to use the run-help function, making it easer to access documentation."
 classes: wide
+header:
+  teaser: /assets/teasers/zsh-run-help.jpg
 ---
 
 So far, the most useful thing I've learned about zsh is how to enable the `run-help` function, which it much easier to learn even more.
