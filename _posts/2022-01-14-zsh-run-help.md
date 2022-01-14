@@ -32,7 +32,7 @@ You can test these commands by entering them in the terminal. Any changes will b
 Some features of `run-help` are dependent on files in the directory indicated by the shell variable HELPDIR. The directory location will vary by installation.
 {% endcapture %}<div class="notice--warning">{{ notice-1 | markdownify }}</div>
 
-To learn more about the `history` command, for example, you can now jump straight to the relevent information:
+To learn more about the `history` command, for example, you can now jump straight to the relevant information:
 
 ```shell
  % help history
