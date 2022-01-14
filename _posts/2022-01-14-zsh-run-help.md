@@ -1,5 +1,6 @@
 ---
 title: "zsh Tip: run-help is extremely helpful"
+last_modified_at: "2022-01-14 08:38"
 category: CLI
 tags:
   - macOS
