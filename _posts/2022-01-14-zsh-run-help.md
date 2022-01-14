@@ -10,7 +10,7 @@ header:
   teaser: /assets/teasers/zsh-run-help.jpg
 ---
 
-So far, the most useful thing I've learned about zsh is how to enable the `run-help` function, which it much easier to learn even more.
+So far, the most useful thing I've learned about zsh is how to enable the `run-help` function, which makes it much easier to learn even more.
 
 ## Enabling run-help
 
@@ -47,7 +47,13 @@ fc -ARWI [ filename ]
 
 To see how much easier this is, try locating the same information with `man history`. (Go ahead. I'll wait.)
 
-### Invoke with ESC-h
+### Invoke run-help with ESC-h
+
+```shell
+%  bindkey | grep run-help
+"^[H" run-help
+"^[h" run-help
+```
 
 By default, `run-help` can also be invoked by pressing "ESC" then "h" after typing any command (without pressing return).
 
