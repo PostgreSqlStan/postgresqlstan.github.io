@@ -1,6 +1,6 @@
 ---
 title: "zsh Tip: run-help is extremely helpful"
-last_modified_at: "2022-01-14 08:38"
+last_modified_at: "2022-01-19 08:32"
 category: CLI
 tags:
   - macOS
@@ -68,3 +68,21 @@ Ironically, the documentation for `run-help` is too deeply hidden in the zshcont
 
 I might have found it eventually, but probably not. Credit goes to helpful contributors at
 [Stack Exchange](https://stackoverflow.com/questions/4405382/how-can-i-read-documentation-about-built-in-zsh-commands).
+
+## Appendum
+
+I discovered additional help modules mentioned in the zshcontrib man pages which can be enabled by autoloading them:
+
+```shell
+autoload run−help−git
+autoload run−help−ip
+autoload run−help−openssl
+autoload run−help−p4
+autoload run−help−sudo
+autoload run−help−svk
+autoload run−help−svn
+```
+
+
+
+
