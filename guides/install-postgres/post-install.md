@@ -1,55 +1,56 @@
 ---
 title: Post-installation
-date: 2021-12-29
-last_modified_at: 2021-12-29
+date: 2022-01-29
 sidebar:
   nav: guides
-author_profile: false
+classes: wide
 ---
+
+After PostgreSQL is installed and the postgres user has been created, there are a few steps left before you can connect to the database server.
 
 ## Create the data directory
 
 Create a Postgres data directory and change its user and group ownership to postgres:
 
-```shell
-sudo mkdir /usr/local/pgsql/data
-sudo chown postgres:postgres /usr/local/pgsql/data
+```
+% sudo mkdir /usr/local/pgsql/data
+% sudo chown postgres:postgres /usr/local/pgsql/data
 ```
 
 ## Initialize the data directory
 
 Run `initdb` as the postgres user to initialize the data directory:
 
-```shell
-sudo -u postgres /usr/local/pgsql/bin/initdb -D /usr/local/pgsql/data
+```
+% sudo -u postgres /usr/local/pgsql/bin/initdb -D /usr/local/pgsql/data
 ```
 
 ## Start the server
 
 Run `pg_ctl` as the postgres user to start the server, specifying the location of the data directory and the log. (Backslashes "\\" are used to continue a command to the next line.)
 
-```shell
-sudo -u postgres /usr/local/pgsql/bin/pg_ctl \
+```
+% sudo -u postgres /usr/local/pgsql/bin/pg_ctl \
      -D /usr/local/pgsql/data \
      -l /usr/local/pgsql/data/logfile start 
 ```
 
 Hopefully, you’ll see this message:
 
-```shell
+```
 waiting for server to start.... done
 server started
 ```
 
 To stop the server:
-```shell
-sudo -u postgres /usr/local/pgsql/bin/pg_ctl \
+```
+% sudo -u postgres /usr/local/pgsql/bin/pg_ctl \
      -D /usr/local/pgsql/data stop 
 ```
 
 ## Configure Your Shell
 
-In order to launch programs like `psql`  without typing the full path (`/usr/local/pgsql/bin/psql`), you need to add Postgres `bin` directory to your shell’s environment variable.
+In order to launch programs like `psql`  without typing the full path (`/usr/local/pgsql/bin/psql`), you need to add the PostgreSQL `bin` directory to your shell’s environment variable.
 
 Add these lines to your shell’s startup file:
 
@@ -65,15 +66,18 @@ MANPATH=/usr/local/pgsql/share/man:$MANPATH
 export MANPATH
 ```
 
-## Connect to the server (and set a password if needed)
+## Connect to the server
 
-The default settings allow the postgres user to connect to a server running on the same computer without a password.
+The default settings allow the postgres superuser to connect to a server running on the same computer without a password.
 
-```shell
-psql -U postgres
+Connect to the server as the postgres user:
+
+```
+% psql -U postgres
 ```
 
-You should be automatically connected to a database (also named postgres) and see a something like this:
+If everything worked, you should be connect to a database (also named "postgres") and see something like this:
+
 ```sql
 psql (14.1)
 Type "help" for help.
@@ -81,9 +85,9 @@ Type "help" for help.
 postgres=# 
 ```
 
-My local installation of Postgres is used for learning and experimenting and does not contain any private or sensitive information, so I leave the password blank for convenience.
+My local installation of PostgreSQL is used for learning, development and testing. It does not contain any private or sensitive information, so I leave the password blank for convenience.
 
-Use `ALTER USER` command to set the password if needed:
+If you need to set a password, use the `ALTER USER` command:
 
 ```sql
 postgres=# ALTER USER postgres PASSWORD 'myPassword';

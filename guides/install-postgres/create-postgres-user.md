@@ -1,31 +1,32 @@
 ---
 title: Create a postgres user on macOS
-date: 2021-12-29
-last_modified_at: 2021-12-29
+date: 2022-01-29
 sidebar:
   nav: guides
-author_profile: false  
+classes: wide
 ---
 
-The generic Unix command to create a postgres user doesn’t work on a Mac:
+If you try to follow the directions in the documention, you'll run into a problem because the common command to create a new user on many Unix-compatible platforms doesn’t work on macOS:
 
-```shell
+```
 % adduser postgres
 zsh: command not found: adduser
 ```
 
+## Use dscl to create postgres user and group
+
 The Directory Service utility `dscl` is used on macOS to manage user accounts.
 
-To check if a postgres account already exists:
+To check if a postgres user already exists:
 
-```shell
-dscl . -read /Users/postgres
+```
+% dscl . -read /Users/postgres
 ```
 
-If there’s no postgres account, you should see an error like this: `<dscl_cmd> DS Error: -14136 (eDSRecordNotFound)`.
+If there’s no postgres account, you should see an error.
 
 {% capture notice-1 %}
-If your computer already has a postgres account, it’s probably OK to use that account for a fresh installation of postgres, but I can’t make any guarantees.
+If your computer already has a postgres account, it’s probably OK to skip this step and use that account for a fresh installation of postgres, but I can’t make any guarantees.
 {% endcapture %}
 
 <div class="notice">{{ notice-1 | markdownify }}</div>
@@ -34,31 +35,31 @@ If your computer already has a postgres account, it’s probably OK to use that 
 
 Create a postgres group:
 
-```shell
-sudo dscl . -create /Groups/postgres
-sudo dscl . -create /Groups/postgres PrimaryGroupID 1000
-sudo dscl . -create /Groups/postgres RealName "PostgreSQL"
+```
+% sudo dscl . -create /Groups/postgres
+% sudo dscl . -create /Groups/postgres PrimaryGroupID 1000
+% sudo dscl . -create /Groups/postgres RealName "PostgreSQL"
 ```
 
 Create a postgres user:
 
-```shell
-sudo dscl . -create /Users/postgres
-sudo dscl . -create /Users/postgres NFSHomeDirectory /var/empty
-sudo dscl . -create /Users/postgres Password "*"
-sudo dscl . -create /Users/postgres PrimaryGroupID 1000
-sudo dscl . -create /Users/postgres RealName "PostgreSQL Server"
-sudo dscl . -create /Users/postgres UniqueID 1000
-sudo dscl . -create /Users/postgres UserShell /usr/bin/false
+```
+% sudo dscl . -create /Users/postgres
+% sudo dscl . -create /Users/postgres NFSHomeDirectory /var/empty
+% sudo dscl . -create /Users/postgres Password "*"
+% sudo dscl . -create /Users/postgres PrimaryGroupID 1000
+% sudo dscl . -create /Users/postgres RealName "PostgreSQL Server"
+% sudo dscl . -create /Users/postgres UniqueID 1000
+% sudo dscl . -create /Users/postgres UserShell /usr/bin/false
 ```
 
 ### Check the postgres user/group 
 
-You can use the `-read` option to check the results:
+Use the `-read` option to verify the postgres group and user have been created:
 
-```shell
-dscl . -read /Groups/postgres
-dscl . -read /Users/postgres
+```
+% dscl . -read /Groups/postgres
+% dscl . -read /Users/postgres
 ```
 
 ---
