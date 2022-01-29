@@ -6,6 +6,8 @@ date: 2022-01-29
 sidebar:
   nav: guides
 excerpt: "Step by step directions for compiling and installing PostgreSQL from source on macOS."
+header:
+  teaser: /assets/teasers/compiling.jpg
 ---
 
 {% capture notice-1 %}
