@@ -10,15 +10,15 @@ excerpt: "Step by step directions for compiling and installing PostgreSQL from s
 
 {% capture notice-1 %}
 
-**Skills Required:** Intermediate terminal knowledge
+**Skills Required:** Intermediate terminal knowledge.
 
-Along with basic commands you should also already know what shell you're using, how to configure it, how to use auto-completion while typing commands, and have a decent understanding of file permissions.
+Along with basic terminal commands, you should also already know what shell you're using, how to configure it, how to use auto-completion while typing commands, and have a decent understanding of file permissions.
 {% endcapture %}<div class="notice--info">{{ notice-1 | markdownify }}</div>
 
 The sensible way to install Postgres on a Mac is to use one of the recommended [macOS package installers](https://www.postgresql.org/download/macosx).
 Building from source is “only recommended for people developing PostgreSQL or extensions.” 
 
-But if you’re comfortable using a terminal and truly determined (or required), the directions for [installing PostgreSQL from source](https://www.postgresql.org/docs/current/installation.html) on Unix-compatible platforms are relatively simple and only require a few modifications (steps #2 and #4) to work on macOS.
+But if you’re comfortable using a terminal and determined enough (or required), the directions for [installing PostgreSQL from source](https://www.postgresql.org/docs/current/installation.html) on Unix-compatible platforms are relatively simple and only require a few modifications (steps #2 and #4) to work on macOS.
 
 
 

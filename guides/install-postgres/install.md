@@ -8,7 +8,7 @@ classes: wide
 
 {% capture notice-1 %}**Prerequisite: XCode Command Line Tools**
 
-Entering `gcc -v` in the terminal will begin dialog to download the Xcode Command Line Tools if they're not already installed.
+Entering `gcc -v` in the terminal will begin a dialog to download the Xcode Command Line Tools if they're not already installed.
 
 {% endcapture %}<div class="notice">{{ notice-1 | markdownify }}</div>
 
@@ -30,20 +30,22 @@ In the terminal, change to a working directory (`~/sandbox` in this example), do
 
 ## Build and Install
 
-Move to the unarchived directory. I usually read any README or INSTALL files, but I've already read them for you, so you can skip that step.
+Move to the unarchived directory and read the README and INSTALL files:
 
 ```
 % cd postgresql-14.1/
 % less README INSTALL
 ```
 
-Following the directions for Unix-compatible platforms, first run `./configure`, which will display many messages and warnings:
+Following the directions for Unix-compatible platforms, first run `./configure`:
 
 ```
 % ./configure
 ```
 
-Then run `make`, which compiles the source files into binaries:
+As long as there are no fatal errors, don't worry about warnings or other information you don't understand.
+
+Next, run `make` to build the software from the source files:
 
 ```
 % make

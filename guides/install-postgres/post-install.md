@@ -10,7 +10,7 @@ After PostgreSQL is installed and the postgres user has been created, there are 
 
 ## Create the data directory
 
-Create a Postgres data directory and change its user and group ownership to postgres:
+Create a data directory and change its user and group ownership to postgres:
 
 ```
 % sudo mkdir /usr/local/pgsql/data
@@ -50,9 +50,7 @@ To stop the server:
 
 ## Configure Your Shell
 
-In order to launch programs like `psql`  without typing the full path (`/usr/local/pgsql/bin/psql`), you need to add the PostgreSQL `bin` directory to your shell’s environment variable.
-
-Add these lines to your shell’s startup file:
+In order to launch programs like `psql`  without typing the full path (`/usr/local/pgsql/bin/psql`), add the PostgreSQL `bin` directory to your shell’s environment variable by adding these lines to your shell’s startup file:
 
 ```
 PATH="/usr/local/pgsql/bin:$PATH"

@@ -6,7 +6,7 @@ sidebar:
 classes: wide
 ---
 
-If you try to follow the directions in the documention, you'll run into a problem because the common command to create a new user on many Unix-compatible platforms doesn’t work on macOS:
+If you follow the directions in the documention, you'll run into a problem because the command to create a new user doesn’t work on macOS:
 
 ```
 % adduser postgres
@@ -31,8 +31,6 @@ If your computer already has a postgres account, it’s probably OK to skip this
 
 <div class="notice">{{ notice-1 | markdownify }}</div>
 
-## Create a postgres group and user
-
 Create a postgres group:
 
 ```
@@ -53,7 +51,7 @@ Create a postgres user:
 % sudo dscl . -create /Users/postgres UserShell /usr/bin/false
 ```
 
-### Check the postgres user/group 
+## Check the postgres user/group
 
 Use the `-read` option to verify the postgres group and user have been created:
 

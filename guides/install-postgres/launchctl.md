@@ -8,7 +8,9 @@ classes: wide
 
 The [contrib/start-scripts/macos](https://github.com/postgres/postgres/tree/master/contrib/start-scripts/macos) directory of the PostgreSQL source code contains files and instructions to automatically launch the postgres server at system start on macOS.
 
-The supplied shell script and plist already match the default settings for a standard installation. Just copy the script and .plist file  in `contrib/start-scripts/macos` to the appropriate system locations:
+The supplied shell script and plist already match the default settings for a standard installation.
+
+If you've installed postgres following the directions on this site, just copy the script and .plist file  in `contrib/start-scripts/macos` to the appropriate system locations:
 
 ```
 % cd ~/sandbox/postgresql-14.1/contrib/start-scripts/macos
