@@ -1,5 +1,6 @@
 ---
 title: "Compiling from source on macOS"
+last_modified_at: "2022-01-29 04:33"
 category: CLI
 tags:
   - macOS
@@ -13,7 +14,7 @@ header:
 
 **Skills Required:** Intermediate terminal/shell knowledge. While compiling from source is not difficult, it's also not a beginner's task.
 
-Along with basic commands you should also already know what shell you're using, how to configure it, how to use auto-completion while typing commands, and have as a decent understanding of file permissions. If you haven't learned those things, you should probably begin your journey into the shell with something simpler.
+Along with basic commands you should also already know what shell you're using, how to configure it, how to use auto-completion while typing commands, and have a decent understanding of file permissions. If you haven't learned those things, you should probably begin your journey into the shell with something simpler.
 {% endcapture %}<div class="notice--info">{{ notice-1 | markdownify }}</div>
 
 ### Why compile from source?
