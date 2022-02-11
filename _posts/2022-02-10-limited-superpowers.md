@@ -5,7 +5,7 @@ category: PostgreSQL
 tags:
   - psql
 classes: wide
-excerpt: "Using roles in PostgreSQL, it's easy to grant a user superuser privileges that can be invoked when needed, somewhat similar to using the sudo command on a Unix-compatible platform."
+excerpt: "Using roles in PostgreSQL, it's easy to give yourself superuser privileges that can be invoked when needed, somewhat similar to using the sudo command on a Unix-compatible platform."
 header:
   teaser: /assets/teasers/limited-superpowers.jpg
 ---
@@ -21,7 +21,7 @@ When learning or working with PostgreSQL on your own computer, it’s convenient
 
 Nonetheless, using superuser privileges only when needed is a good habit to develop. In addition to limiting the havoc you can wreak on your own databases, it’s a good way to learn what restrictions, or lack thereof, exist for “normal” users. You might be surprised.
 
-Using **roles** in PostgreSQL, it's easy to grant a user superuser privileges that can be invoked when needed, somewhat similar to using the sudo command on a Unix-compatible platform.
+Using **roles** in PostgreSQL, it's easy to give yourself superuser privileges that can be invoked when needed, somewhat similar to using the sudo command on a Unix-compatible platform.
 
 {% capture notice-1 %}
 In PostgreSQL **roles are used as both users and groups**, which I only mention because the interchangeable terminology used by commands makes the topic unavoidable. This can be very confusing at first.
