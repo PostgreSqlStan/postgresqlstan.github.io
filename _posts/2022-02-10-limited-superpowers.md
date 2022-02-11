@@ -1,10 +1,11 @@
 ---
+last_modified_at: 2021-02-11
 title: "PostgreSQL - Grant Yourself Limited Superpowers"
 category: PostgreSQL
 tags:
   - psql
 classes: wide
-excerpt: "Using **roles** in PostgreSQL, it's easy to grant a user superuser privileges temporarily, somewhat similar to using the sudo command on a Unix-compatible platform."
+excerpt: "Using roles in PostgreSQL, it's easy to grant a user superuser privileges that can be invoked when needed, somewhat similar to using the sudo command on a Unix-compatible platform."
 header:
   teaser: /assets/teasers/limited-superpowers.jpg
 ---
@@ -14,21 +15,23 @@ header:
 Requirements: PostgreSQL is installed on your computer and you're able to connect to it with psql.
 {% endcapture %}<div class="notice--primary">{{ notice-0 | markdownify }}</div>
 
-“Superuser status is dangerous and should be used only when really needed.” - [PostgreSQL Manual](#further-reading)
+> [S]uperusers can access all objects regardless of object privilege settings. This is comparable to the rights of root in a Unix system. As with root, it's unwise to operate as a superuser except when absolutely necessary. - [PostgreSQL Manual](#further-reading)
 
-When learning or working with PostgreSQL on your own computer, it’s convenient to give your database user superuser privileges. With the default configuration, which only allows local connections, the danger is fairly limited.
+When learning or working with PostgreSQL on your own computer, it’s convenient to give your database user superuser privileges. With the default configuration, which doesn't allow remote connections, the danger is fairly limited.
 
 Nonetheless, using superuser privileges only when needed is a good habit to develop. In addition to limiting the havoc you can wreak on your own databases, it’s a good way to learn what restrictions, or lack thereof, exist for “normal” users. You might be surprised.
 
-Using **roles** in PostgreSQL, it's easy to grant a user superuser privileges temporarily, somewhat similar to using the sudo command on a Unix-compatible platform.
+Using **roles** in PostgreSQL, it's easy to grant a user superuser privileges that can be invoked when needed, somewhat similar to using the sudo command on a Unix-compatible platform.
 
 {% capture notice-1 %}
-In PostgreSQL **roles are used as both users and groups**, which I only mention because the interchangeable terminology used by commands makes the topic unavoidable. This can be very confusing at first. Try not to worry about it.
+In PostgreSQL **roles are used as both users and groups**, which I only mention because the interchangeable terminology used by commands makes the topic unavoidable. This can be very confusing at first.
+
+Try not to worry about it. In practice, as I hope to demonstrate, the concept is fairly simple.
 {% endcapture %}<div class="notice">{{ notice-1 | markdownify }}</div>
 
 ## Create a user
 
-Run psql as the postgres superuser:
+Connect to the database as the postgres superuser:
 
 ```
 % psql -U postgres
@@ -38,7 +41,7 @@ Type "help" for help.
 postgres=#
 ```
 
-Use `\du` to list existing roles (users and groups). Upon creation, a new database cluster has a single superuser, conventionally named “postgres.”
+Upon creation, a new database cluster has a single superuser, conventionally named “postgres.” Use `\du` to list existing roles (users and groups):
 
 ```
 postgres=# \du
@@ -49,7 +52,7 @@ postgres=# \du
 ```
 
 {% capture notice-2 %}
-**All of these commands can be entered in lower case.** If you're learning by entering these commands on your terminal, as I encourage you to do, save your time and use lower case. I'm using UPPER CASE commands only to highlight key words.
+**All of these commands can be entered in lower case.** I'm using UPPER CASE commands here only to highlight key words. You can give your shift key a rest.
 {% endcapture %}<div class="notice--primary">{{ notice-2 | markdownify }}</div>
 
 
@@ -74,7 +77,7 @@ CREATE ROLE
 
 ## Grant superpowers to your user
 
-Use the appropriately named GRANT command to allow a user to use the privileges of another role:
+Use the GRANT command to give a user membership in a role:
 
 ```
 postgres=# GRANT dba TO stan;
@@ -91,6 +94,21 @@ postgres=# \du
  dba       │ Superuser, Cannot login                                    │ {}
  postgres  │ Superuser, Create role, Create DB, Replication, Bypass RLS │ {}
  stan      │                                                            │ {dba}
+```
+
+### Revoking privileges or membership
+
+To apply this method to an existing user (role) that already has superuser privileges, you can revoke them with the `ALTER ROLE` command:
+```
+postgres=# ALTER ROLE stan NOSUPERUSER;
+ALTER ROLE
+```
+
+Use the `REVOKE` command to remove a user from a role:
+
+```
+postgres=# REVOKE dba FROM stan;
+REVOKE ROLE
 ```
 
 ## Invoke your superpowers with SET ROLE
@@ -121,6 +139,10 @@ postgres=# CREATE DATABASE su_test;
 CREATE DATABASE
 ```
 
+{% capture notice-5 %}
+Note: The SUPERUSER attribute (as well as LOGIN, CREATEDB, and CREATEROLE) can not be inherited through membership and must be explicitly invoked with the `SET ROLE` command.
+{% endcapture %}<div class="notice">{{ notice-5 | markdownify }}</div>
+
 Relinquish your superpowers:
 ```
 postgres=# RESET ROLE;
@@ -131,7 +153,7 @@ DROP DATABASE
 
 (Because I created the su_test database, I’m allowed to drop it without using superuser privileges. This is something I "knew" and had forgotten before I wrote this tutorial. Using a non-superuser account helpfully reminded me.)
 
-Trying to create the database again verifies my superpowers have been relinquished:
+Again, try to create a database to verify your superpower have been relinquished:
 
 ```
 postgres=> CREATE DATABASE su_test;
@@ -151,17 +173,5 @@ PostgreSQL Documentation:
 * [SET ROLE, RESET ROLE](https://www.postgresql.org/docs/current/sql-set-role.html)
 * [GRANT](https://www.postgresql.org/docs/current/sql-grant.html)
 * [REVOKE](https://www.postgresql.org/docs/current/sql-revoke.html)
+* [ROLE MEMBERSHIP](https://www.postgresql.org/docs/current/role-membership.html)
 
-
-## Notes
-
-{% capture notice-5 %}
-
-**Revoking superuser privileges**: To apply this limited superpowers method to an existing user (role), you can revoke superuser privileges with the `ALTER ROLE` command:
-```
-postgres=# ALTER ROLE stan NOSUPERUSER;
-ALTER ROLE
-```
----
-**Superuser is not "inherited"**: Unlike most other privileges, superuser privileges are not automatically inherited, which is why `SET ROLE` is  needed to invoke them. (I read this somewhere in the docs but now can't find the specific reference.)
-{% endcapture %}<div class="notice--info">{{ notice-5 | markdownify }}</div>
