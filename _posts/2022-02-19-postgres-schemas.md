@@ -12,7 +12,7 @@ header:
   teaser: /assets/teasers/using-schemas.jpg
 ---
 
-This hands-on tutorial demonstrates how to use *schemas* to organize data and objects you create, a useful technique for storing a collection of learning resources in a single database.
+This hands-on tutorial demonstrates how to organize the data and objects you create with *schemas*, a useful technique for storing a collection of learning resources in a single database.
 
 {% capture requirements %}
 :wrench: Requirements: You should know how to create a new database and connect to it with psql.
@@ -144,7 +144,9 @@ LINE 1: select * from t1;
 
 ### Changing the search path
 
-To work with a renamed schema without the hassle of using qualified names, you can change the `search_path`. For example, if you set the `search_path` to `example1`, the tables we created earlier will be visible:
+Changing the `search_path` is an easy way to work with a renamed schema without the hassle of using qualified names.
+
+For example, to make the tables in `example1` visible:
 
 ```sql
 > set search_path to example1;
@@ -176,7 +178,7 @@ To summarize, to organize various learning projects in a single database:
 Here's some other, optional techniques you can use with this workflow.
 
 <figure style="width: 600px" class="align-center">
-  <a href="/assets/images/mural.jpg" title="Street corner in Cappadocia" alt="Street corner in Cappadocia">
+  <a href="/assets/images/mural.jpg" title="Mural in Istanbul" alt="Mural in Istanbul">
   <img src="/assets/images/mural.jpg" alt=""></a>
   <figcaption>Random photo: Mural in Istanbul</figcaption>
 </figure>
@@ -204,7 +206,7 @@ No need for wildcards now:
 :sparkles: `TABLE` is a shortcut for `SELECT * FROM`.
 {% endcapture %}<div class="notice">{{ tip-3 | markdownify }}</div>
 
-If you change the `search_path` to work with a schema, refer to objects in the public schema with a qualified name (e.g., `public.ls`) or adding `public` to the `search_path`:
+To keep the view visible while working with another schema, add `public` to the `search_path`:
 
 ```sql
 > set search_path to example1, public;
@@ -235,7 +237,8 @@ An easier method is altering the database to remove `public` from its default se
 > alter database stan set search_path to "$user";
 ALTER DATABASE
 ```
-(This command will not effect the current session. Reconnect to the database to observe the change.)
+
+(Unlike changes made with the `SET` command, this change will persist but won't effect the current session. Reconnect to the database to observe the change.)
 
 With this method, when my eponymous schema doesn't exist, trying to create a new object returns an error:
 
@@ -250,6 +253,12 @@ But if I want to create an object in the public schema, I can still use its qual
 ```sql
 > create table public.path_test(i int);
 ```
+
+<figure style="width: 600px" class="align-center">
+  <a href="/assets/images/rug-cat.jpg" title="Random photo of my cat" alt="Random photo of my cat">
+  <img src="/assets/images/rug-cat.jpg" alt=""></a>
+  <figcaption>Random photo of my cat</figcaption>
+</figure>
 
 ## Further reading
 
