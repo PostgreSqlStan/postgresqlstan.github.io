@@ -101,13 +101,7 @@ List schemas with comments by adding "+" to the standard meta command:
           │          │ =UC/postgres         │
 ```
 
-With the previous project archived, create a new eponymous schema for the next one:
-
-```sql
-> create schema stan;
-```
-
-Alternatively, if you don't want to keep what you were working on, use the `DROP` command to delete your schema before creating a new one.
+Before beginning a new project, simply create a new eponymous schema. Alternatively, if you don't want to keep what you were working on, instead of renaming it just use the `DROP` command to delete your schema before creating a new one.
 
 ---
 
