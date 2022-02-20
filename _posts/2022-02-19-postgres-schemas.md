@@ -77,7 +77,7 @@ To move the first table we created from `public` to our renamed schema, use the 
 > alter table t1 set schema example1;
 ```
 
-After collecting new objects and data into your schema, if you want to keep what you’ve created, simply rename the schema:
+When you finish working on a project, rename the schema to something appropriate:
 
 ```sql
 > alter schema stan rename to example1;
@@ -100,6 +100,14 @@ List schemas with comments by adding "+" to the standard meta command:
  public   │ postgres │ postgres=UC/postgres↵│ standard public schema
           │          │ =UC/postgres         │
 ```
+
+With the previous project archived, create a new eponymous schema for the next one:
+
+```sql
+> create schema stan;
+```
+
+Alternatively, if you don't want to keep what you were working on, use the `DROP` command to delete your schema before creating a new one.
 
 ---
 
