@@ -1,4 +1,5 @@
 ---
+last_modified_at: "2022-02-21"
 title: "Set Up PostgreSQL for Learning with Schemas"
 category: PostgreSQL
 tags:
@@ -12,7 +13,7 @@ header:
   teaser: /assets/teasers/using-schemas.jpg
 ---
 
-This hands-on tutorial demonstrates how to organize the data and objects you create with *schemas*, a useful technique for storing a collection of learning resources in a single database.
+This hands-on tutorial demonstrates how to use *schemas* to organize data and objects you create, a useful technique for storing a collection of learning resources in a single database.
 
 {% capture requirements %}
 :wrench: Requirements: You should know how to create a new database and connect to it with psql.
@@ -265,5 +266,7 @@ But if I want to create an object in the public schema, I can still use its qual
 ## Further reading
 
 PostgreSQL Documentation
-: [Chapter 5. Data Definition : Schemas](https://www.postgresql.org/docs/current/ddl-schemas.html) - *A brief but thorough explanation of schemas, well worth reading*
+: [Chapter 5. Data Definition : Schemas](https://www.postgresql.org/docs/current/ddl-schemas.html) - *A brief but thorough explanation of schemas and their common use cases, well worth reading.*
 
+Other Sources
+: [Demystifying Schemas & search_path through Examples](https://blog.crunchydata.com/blog/demystifying-schemas-search_path-through-examples) - *A detailed exploration of schemas, roles, privileges, and security implications.*
