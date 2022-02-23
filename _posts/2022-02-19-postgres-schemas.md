@@ -268,5 +268,5 @@ But if I want to create an object in the public schema, I can still use its qual
 PostgreSQL Documentation
 : [Chapter 5. Data Definition : Schemas](https://www.postgresql.org/docs/current/ddl-schemas.html) - *A brief but thorough explanation of schemas and their common use cases, well worth reading.*
 
-Other Sources
-: [Demystifying Schemas & search_path through Examples](https://blog.crunchydata.com/blog/demystifying-schemas-search_path-through-examples) - *A detailed exploration of schemas, roles, privileges, and security implications.*
+Other
+: Jonathan Katz: [Demystifying Schemas & search_path through Examples](https://blog.crunchydata.com/blog/demystifying-schemas-search_path-through-examples) - *A detailed exploration of schemas, roles, privileges, and security implications.*
