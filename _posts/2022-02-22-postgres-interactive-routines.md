@@ -17,7 +17,7 @@ could become:
 Unfortunately, it turns out I have to supply a value for the OUT argument:
 
 ```sql
-> call do_something(null::text)
+> call do_something(null::text);
 ```
 
 Not so convenient for interactive use. Oh, well. Maybe in a future version.

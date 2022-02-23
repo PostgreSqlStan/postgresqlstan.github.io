@@ -1,5 +1,5 @@
 ---
-last_modified_at: "2022-02-21"
+last_modified_at: "2022-02-22"
 title: "Set Up PostgreSQL for Learning with Schemas"
 category: PostgreSQL
 tags:
