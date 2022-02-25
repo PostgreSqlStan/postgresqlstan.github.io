@@ -2,7 +2,11 @@
 last_modified_at: 2022-02-24
 title: "Learning how to use Postgres procedures"
 category: PostgreSQL
+tags:
+  - note to self
 ---
+
+*Personal learning notes*
 
 I have a collection of functions designed to be used interactively in psql. Because the `call` syntax seems more appropriate for code that performs DDL actions, I was hoping to replace some functions with procedures. So:
 
@@ -52,7 +56,7 @@ BEGIN
 END; $PROC$ LANGUAGE 'plpgsql';
 ```
 
-The simplified procedure above creates a table of the specified number of columns. (I use this when examining that doesn't have column names.)
+(The simplified procedure above creates a table with the specified number of text columns, used to examine data that doesn't have column names.)
 
 Now, I can call it with this syntax:
 
@@ -62,4 +66,3 @@ Now, I can call it with this syntax:
 ──────────────────────
  created import table
 ```
-
