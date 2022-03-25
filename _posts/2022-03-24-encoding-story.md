@@ -82,14 +82,12 @@ Based on visual examination and internet searches for the specific invalid bytes
 
 ### The solution
 
-
 When I tried to use sed to remove the `\xa0` bytes I got an "illegal byte sequence" error:
 
 ```
 % sed 's/\xa0//g' a0
 sed: 1: "s/\xa0//g": RE error: illegal byte sequence
 ```
-
 A quick internet search found this solution:
 
 ```
@@ -101,7 +99,6 @@ Inspecting the results, the `\xa0` has been removed. It works.
 {% capture requirements %}
 **Note:** After setting LC_TYPE once, I seem to have no more "illegal byte sequence" errors from sed, even after restarting my computer. This is slightly concerning, but hasn't seemed to cause any problem. Searching the web, I haven't found reports of this behavior. I'm choosing to ignore the issue for as long as possible.
 {% endcapture %}<div class="notice--primary">{{ requirements | markdownify }}</div>
-
 
 Next I try replacing `\xa0` with the correct code for a non-breaking space, `\xc2\xa0`, and examine the results.
 
