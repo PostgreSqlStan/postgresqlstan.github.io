@@ -4,6 +4,8 @@ title: "Learning how to use Postgres procedures"
 category: PostgreSQL
 tags:
   - note to self
+header:
+  teaser: /assets/teasers/cat-laptop.jpg
 ---
 
 *Personal learning notes*
