@@ -1,5 +1,5 @@
 ---
-last_modified_at: 2021-03-24
+last_modified_at: 2021-03-25
 title: "Tangled Up in Encoding"
 category: CLI
 tags:
