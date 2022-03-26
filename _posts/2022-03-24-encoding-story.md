@@ -1,11 +1,11 @@
 ---
 last_modified_at: 2021-03-25
-title: "Tangled Up in Encoding (draft)"
+title: "Tangled Up in Encoding"
 category: CLI
 tags:
   - encoding
   - PostgreSQL
-excerpt: "Fixing invalid byte sequences with sed"
+excerpt: "[DRAFT VERSION] Fixing invalid byte sequences with sed"
 classes: wide
 header:
   overlay_image: /assets/images/tangled.jpeg
@@ -13,7 +13,7 @@ header:
   teaser: /assets/teasers/invalid-bytes.jpeg
 ---
 
-**[Draft still being edited.]**
+**Draft Version**
 
 *For the sake of brevity and coherence, various detours, experiments, and failures have been omitted from this story.*
 
