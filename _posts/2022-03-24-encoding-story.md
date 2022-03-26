@@ -1,11 +1,11 @@
 ---
 last_modified_at: 2021-03-25
-title: "Tangled Up in Encoding"
+title: "Tangled Up in Encoding (draft)"
 category: CLI
 tags:
   - encoding
   - PostgreSQL
-excerpt: "An adventure with encoding errors."
+excerpt: "Fixing invalid byte sequences with sed"
 classes: wide
 header:
   overlay_image: /assets/images/tangled.jpeg
@@ -13,20 +13,32 @@ header:
   teaser: /assets/teasers/invalid-bytes.jpeg
 ---
 
+**[Draft still being edited.]**
+
 *For the sake of brevity and coherence, various detours, experiments, and failures have been omitted from this story.*
 
-## The Adventure Begins
+{% capture environment %}
+Environment: macOS 12.2.1, zsh 5.8, PostgreSQL 14.1
+{% endcapture %}<div class="notice">{{ environment | markdownify }}</div>
 
-Trying to load a collection of song lyrics into PostgreSQL with the `\COPY` command, I received this error message:
+## Invalid byte sequences
+
+While trying to load a collection of song lyrics into PostgreSQL, I received this error message:
 
 ```
 ERROR:  invalid byte sequence for encoding "UTF8": 0xa0
 CONTEXT:  COPY _tmp, line 154:
 ```
 
-Examining line 154, I saw "\xa0" in the text (in the midst of lyrics which will not be repeated here).
+Postgres is very strict about data validation, which is one of the many reasons I use it.
 
-Trying to load a file into postgres is only way I know to determine if it contains invalid byte sequences. So I filter out the problematic lines and try to load the file again:
+Various programs opened the file with the invalid bytes appearing as text in a different color, no errors or warnings. Thanks to postgres, I have a chance to fix them.
+
+### So Adventure Begins
+
+Examining line 154, I saw "\xa0" in the text (in the midst of some song lyrics which will not be repeated here).
+
+Loading a file into postgres is only way I know to determine if it contains invalid byte sequences. So I filter out the problematic lines and try to load it again.
 
 ```
 > \copy _tmp from program 'tail -n +2 lyrics.csv | grep -v ''\\xa0'' '
@@ -34,7 +46,7 @@ ERROR:  invalid byte sequence for encoding "UTF8": 0xad
 CONTEXT:  COPY _tmp, line 834: "7IYU41rxDOremaBZi0vEMn  ['I flew to Hawaii recently to shoot a film, fresh on the heels of being labe..."
 ```
 
-(The .csv suffix is a lie and `tail -n +2` is used to remove the header, something postgres refuses to do if it's not in csv format.)
+(The .csv suffix is a lie, so `tail -n +2` is used to remove the header, something postgres refuses to do if it's not in csv format.)
 
 I discover another invalid byte sequence to filter out: "0xad". Repeating the process, I keep filtering out problematic lines until the file loads with this incantation:
 
@@ -74,6 +86,8 @@ Based on visual examination and internet searches for the specific bytes in ques
 * \x92 - replace: Obviously should be an apostrophe, which is what U+0092 is.
 * \x81 - remove: Even if this byte is intended to be a valid character, it appears in the midst of gibberish or other invalid bytes. Converting it to a "correct" character could not improve the accuracy of the lyrics.
 
+*Trying to examine long passages of unicode text in the terminal is the first time I've been genuinely disappointed by the performance and behavior of the standard pager, less. A more modern pager is very appealing at the moment.*
+
 <figure style="width: 800px" class="align-center">
   <a href="/assets/images/tangled.jpeg" title="Tangled" alt="painting of several cursive characters twisted into one">
   <img src="/assets/images/tangled.jpeg" alt="painting"></a>
@@ -96,9 +110,9 @@ A quick internet search found this solution:
 
 Inspecting the results, the `\xa0` has been removed. It works.
 
-{% capture requirements %}
+{% capture note %}
 **Note:** After setting LC_TYPE once, I seem to have no more "illegal byte sequence" errors from sed, even after restarting my computer. This is slightly concerning, but hasn't seemed to cause any problem. Searching the web, I haven't found reports of this behavior. I'm choosing to ignore the issue for as long as possible.
-{% endcapture %}<div class="notice--primary">{{ requirements | markdownify }}</div>
+{% endcapture %}<div class="notice--primary">{{ note | markdownify }}</div>
 
 Next I try replacing `\xa0` with the correct code for a non-breaking space, `\xc2\xa0`, and examine the results.
 
@@ -153,3 +167,7 @@ Finally. That was exhausting. Time for a nap.
   <img src="/assets/images/nap-time.jpeg" alt="napping cat"></a>
   <figcaption>Napping cat</figcaption>
 </figure>
+
+### A better way to validate encoding?
+
+There must be an easier to validate encoding than loading data into Postgres, preferably using builtin tools. Despite a fair amount of searching, I haven't found it yet.
