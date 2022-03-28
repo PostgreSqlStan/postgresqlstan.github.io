@@ -5,7 +5,7 @@ category: CLI
 tags:
   - encoding
   - PostgreSQL
-excerpt: "[DRAFT VERSION] Fixing invalid byte sequences with sed"
+excerpt: "[DRAFT VERSION]"
 classes: wide
 header:
   overlay_image: /assets/images/tangled.jpeg
@@ -15,11 +15,11 @@ header:
 
 **Draft Version**
 
-*For the sake of brevity and coherence, various detours, experiments, and failures have been omitted from this story.*
+*For the sake of brevity and coherence, various detours, experiments, and missteps have been omitted from this story.*
 
-{% capture environment %}
+{% capture env %}
 Environment: macOS 12.2.1, zsh 5.8, PostgreSQL 14.1
-{% endcapture %}<div class="notice">{{ environment | markdownify }}</div>
+{% endcapture %}<div class="notice">{{ env | markdownify }}</div>
 
 ## Invalid byte sequences
 
@@ -30,15 +30,25 @@ ERROR:  invalid byte sequence for encoding "UTF8": 0xa0
 CONTEXT:  COPY _tmp, line 154:
 ```
 
-Postgres is very strict about data validation, which is one of the many reasons I use it.
+Examining line 154, I saw "\xa0" in the text. (The lyrics which will not be repeated here).
 
-Various programs opened the file with the invalid bytes appearing as text in a different color, no errors or warnings. Thanks to postgres, I have a chance to fix them.
+Various desktop applications, including my preferred text editor, opened this file without errors or warnings, simply displaying the invalid bytes in a different style. In a file this size, I doubt I would have noticed the problem.
 
-### So Adventure Begins
+Strict data validation is one of the many reasons I use postgres.
 
-Examining line 154, I saw "\xa0" in the text (in the midst of some song lyrics which will not be repeated here).
+### The Adventure Begins
 
-Loading a file into postgres is only way I know to determine if it contains invalid byte sequences. So I filter out the problematic lines and try to load it again.
+*Here we're going to pretend that, rather down chasing down a solution to this error, I did the sensible thing: determining the full scope of the problem before seeking solutions.*
+
+To check for other invalid byte sequences, I'll filter out the lines containing "\xa0" and try to load the file again. I won't edit the source file. (I never do that.) Instead, I'll use the `program` option of the `\copy` commmand in psql to perform whatever filtering is needed.
+
+In this case, because the file is tab-delimited (despite the .csv suffix) and postgres only allows the `header` option with the csv format, I was already removing the first line of the file with the `tail` program:
+
+```
+> \copy _tmp from program 'tail -n +2 lyrics.csv'
+```
+
+To remove the lines containing "\xa0", also I pipe the result through grep:
 
 ```
 > \copy _tmp from program 'tail -n +2 lyrics.csv | grep -v ''\\xa0'' '
@@ -46,20 +56,26 @@ ERROR:  invalid byte sequence for encoding "UTF8": 0xad
 CONTEXT:  COPY _tmp, line 834: "7IYU41rxDOremaBZi0vEMn  ['I flew to Hawaii recently to shoot a film, fresh on the heels of being labe..."
 ```
 
-(The .csv suffix is a lie, so `tail -n +2` is used to remove the header, something postgres refuses to do if it's not in csv format.)
-
-I discover another invalid byte sequence to filter out: "0xad". Repeating the process, I keep filtering out problematic lines until the file loads with this incantation:
+I've found another invalid byte sequence to filter out. Repeating the process,
+I continue filtering out problematic lines until the file finally loads with this incantation:
 
 ```
 > \copy _tmp from program 'tail -n +2 lyrics.csv | grep -v -e ''\\xa0'' -e ''\\xad'' -e ''\\x92'' -e ''\\x9d'' -e ''\\x81'' '
 COPY 20238
 ```
 
-I've loaded 20238 of 20404 rows, leaving 166 problematic rows to examine.
+I've loaded 20238 out of:
+
+```
+% wc -l lyrics.csv
+   20405 lyrics.csv
+```
+
+There were 166 lines excluded. Time to try figure out why.
 
 ### Examine the invalid data
 
-Having identified 5 invalid byte sequences (0xa0, 0xad, 0x92, 0x9d, 0x81), I'll extract the problematic lines to review:
+Having identified 5 invalid byte sequences, I extract the problematic lines for a closer look:
 
 ```
 % mkdir invalid
@@ -78,7 +94,7 @@ Having identified 5 invalid byte sequences (0xa0, 0xad, 0x92, 0x9d, 0x81), I'll 
        3 81
 ```
 
-Based on visual examination and internet searches for the specific bytes in question, I eventually concluded:
+Based on visual examination and internet searches for the specific bytes in question, I eventually conclude:
 
 * \xa0 - replace: Should be a non-breaking space.
 * \xad - remove: Looks like random noise. Might be a soft hyphen, but not useful here.
@@ -86,12 +102,10 @@ Based on visual examination and internet searches for the specific bytes in ques
 * \x92 - replace: Obviously should be an apostrophe, which is what U+0092 is.
 * \x81 - remove: Even if this byte is intended to be a valid character, it appears in the midst of gibberish or other invalid bytes. Converting it to a "correct" character could not improve the accuracy of the lyrics.
 
-*Trying to examine long passages of unicode text in the terminal is the first time I've been genuinely disappointed by the performance and behavior of the standard pager, less. A more modern pager is very appealing at the moment.*
-
 <figure style="width: 800px" class="align-center">
   <a href="/assets/images/tangled.jpeg" title="Tangled" alt="painting of several cursive characters twisted into one">
   <img src="/assets/images/tangled.jpeg" alt="painting"></a>
-  <figcaption>Invalid Bytes (renamed painting by the author's wife)</figcaption>
+  <figcaption>"Invalid Bytes" (renamed painting by the author's wife)</figcaption>
 </figure>
 
 ### sed to the Rescue
