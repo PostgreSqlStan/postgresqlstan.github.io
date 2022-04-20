@@ -6,7 +6,7 @@ category: zsh
 tags:
   - CLI
   - shell functions
-excerpt: "Join me for this hands-on exploration of writing a shell function in zsh."
+excerpt: "Join me for a hands-on exploration of writing a shell function in zsh."
 header:
   overlay_image: /assets/headers/digging.jpg
   overlay_filter: 0.3 # same as adding an opacity of 0.5 to a black background
