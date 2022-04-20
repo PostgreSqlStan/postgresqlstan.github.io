@@ -1,11 +1,12 @@
 ---
-last_modified_at: 2021-03-25
+last_modified_at: 2022-04-20
+updated: 2022-04-20
 title: "Tangled Up in Encoding"
 category: CLI
 tags:
   - encoding
   - PostgreSQL
-excerpt: "An adventure with encoding errors."
+excerpt: "Fixing invalid byte sequences in UTF8 text with sed."
 header:
   overlay_image: /assets/images/tangled.jpeg
   overlay_filter: 0.3
