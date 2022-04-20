@@ -6,10 +6,9 @@ tags:
   - encoding
   - PostgreSQL
 excerpt: "[DRAFT VERSION]"
-classes: wide
 header:
   overlay_image: /assets/images/tangled.jpeg
-  overlay_filter: 0.5
+  overlay_filter: 0.3
   teaser: /assets/teasers/invalid-bytes.jpeg
 ---
 
@@ -38,9 +37,9 @@ Strict data validation is one of the many reasons I use postgres.
 
 ### The Adventure Begins
 
-*Here we're going to pretend that, rather down chasing down a solution to this error, I did the sensible thing: determining the full scope of the problem before seeking solutions.*
+*Let's pretend that rather down chasing down a solution to the first error I encountered, I did the sensible thing described here and determined the full scope of the problem before seeking solutions.*
 
-To check for other invalid byte sequences, I'll filter out the lines containing "\xa0" and try to load the file again. I won't edit the source file. (I never do that.) Instead, I'll use the `program` option of the `\copy` commmand in psql to perform whatever filtering is needed.
+To check for other invalid byte sequences, I filter out the lines containing "\xa0" and try to load the file again. Instead of editing the source file, I'll use the `program` option of the `\copy` command to perform whatever filtering is needed.
 
 In this case, because the file is tab-delimited (despite the .csv suffix) and postgres only allows the `header` option with the csv format, I was already removing the first line of the file with the `tail` program:
 
@@ -48,7 +47,7 @@ In this case, because the file is tab-delimited (despite the .csv suffix) and po
 > \copy _tmp from program 'tail -n +2 lyrics.csv'
 ```
 
-To remove the lines containing "\xa0", also I pipe the result through grep:
+To remove the lines containing "\xa0", also I pipe the file through grep:
 
 ```
 > \copy _tmp from program 'tail -n +2 lyrics.csv | grep -v ''\\xa0'' '
@@ -56,22 +55,21 @@ ERROR:  invalid byte sequence for encoding "UTF8": 0xad
 CONTEXT:  COPY _tmp, line 834: "7IYU41rxDOremaBZi0vEMn  ['I flew to Hawaii recently to shoot a film, fresh on the heels of being labe..."
 ```
 
-I've found another invalid byte sequence to filter out. Repeating the process,
-I continue filtering out problematic lines until the file finally loads with this incantation:
+And when I try to load the file again, I find another invalid byte sequence to filter out. Repeating the process, I continue filtering out problematic lines until the file finally loads with this rather lengthy incantation:
 
 ```
 > \copy _tmp from program 'tail -n +2 lyrics.csv | grep -v -e ''\\xa0'' -e ''\\xad'' -e ''\\x92'' -e ''\\x9d'' -e ''\\x81'' '
 COPY 20238
 ```
 
-I've loaded 20238 out of:
+I've loaded 20238 lines out of a total of:
 
 ```
 % wc -l lyrics.csv
    20405 lyrics.csv
 ```
 
-There were 166 lines excluded. Time to try figure out why.
+That's leaves 166 lines that were excluded. Time to try figure out why.
 
 ### Examine the invalid data
 
@@ -102,7 +100,7 @@ Based on visual examination and internet searches for the specific bytes in ques
 * \x92 - replace: Obviously should be an apostrophe, which is what U+0092 is.
 * \x81 - remove: Even if this byte is intended to be a valid character, it appears in the midst of gibberish or other invalid bytes. Converting it to a "correct" character could not improve the accuracy of the lyrics.
 
-<figure style="width: 800px" class="align-center">
+<figure style="width: 600px" class="align-center">
   <a href="/assets/images/tangled.jpeg" title="Tangled" alt="painting of several cursive characters twisted into one">
   <img src="/assets/images/tangled.jpeg" alt="painting"></a>
   <figcaption>"Invalid Bytes" (renamed painting by the author's wife)</figcaption>
@@ -110,25 +108,26 @@ Based on visual examination and internet searches for the specific bytes in ques
 
 ### sed to the Rescue
 
-When I tried to use sed to remove the `\xa0` bytes I got an "illegal byte sequence" error:
+The first time I tried to use sed to remove the `\xa0` bytes, I got an "illegal byte sequence" error:
 
 ```
 % sed 's/\xa0//g' a0
 sed: 1: "s/\xa0//g": RE error: illegal byte sequence
 ```
-A quick internet search found this solution:
+
+Searching for the internet, I quickly found a solution to this fairly common problem. Instead of UTF-8, I needed to run `sed` with the locale set to `LC_CTYPE=C`:
 
 ```
 % LC_TYPE=C sed 's/\\xa0//g' a0
 ```
 
-Inspecting the results, the `\xa0` has been removed. It works.
+Examining the results, I verify this works. The `\xa0` has been removed.
 
 {% capture note %}
 **Note:** After setting LC_TYPE once, I seem to have no more "illegal byte sequence" errors from sed, even after restarting my computer. This is slightly concerning, but hasn't seemed to cause any problem. Searching the web, I haven't found reports of this behavior. I'm choosing to ignore the issue for as long as possible.
 {% endcapture %}<div class="notice--primary">{{ note | markdownify }}</div>
 
-Next I try replacing `\xa0` with the correct code for a non-breaking space, `\xc2\xa0`, and examine the results.
+Next I try replacing `\xa0` with the correct code for a non-breaking space, `\xc2\xa0`:
 
 ```
 % sed 's/\\xa0/\xc2\xa0/g' a0 | less
@@ -142,14 +141,14 @@ Similarly, I used sed to replace invalid bytes in other files with an empty stri
 % sed 's/\\xad//g' ad
 ```
 
-That left `\x92` to deal with, which should be some type of apostrophe. Based on common advice on the internet, I tried converting the character from windows-1252 to utf-8:
+That left `\x92` to deal with which, based on visual inspections, should cleary be some type of apostrophe. Based on common advice on the internet, I tried converting the character from windows-1252 to utf-8:
 
 ```
 % echo '\x92' | iconv -f windows-1252 -t utf-8
 ’
 ```
 
-Finally, I copied the above output into the following sed pattern to fix the invalid bytes in `92`:
+It worked. So, I copied the above output into the following sed pattern to fix the invalid bytes in `92`:
 
 ```
 % sed 's/\\x92/’/g' 92
@@ -165,23 +164,20 @@ ERROR:  invalid byte sequence for encoding "UTF8": 0x8f
 CONTEXT:  COPY _tmp, line 13420: "4uM5yY5f3430f8Q27ijmLd  "['[Nappy Intro]\n:\x8f\x8f\x8f\x8f\x8f\x8f\x8f^|\n\n[Klonopin Intro]\nOh God..."
 ```
 
-Another invalid byte!
+And I discovered another invalid byte: `0x8f`.
 
-After examining the line and searching the web for obvious character substitutions, I decide to remove `0x8f` as well.
+Examining the line and searching the web didn't reveal any obvious substitutions, so I decide to remove `0x8f` as well.
+
+I added one more filter to the long incantation:
 
 ```
 > \copy _tmp from program 'tail -n +2 lyrics.csv | sed -e ''s/\\xa0/\xc2\xa0/g'' -e ''s/\\xad//g'' -e ''s/\\x92/’/g'' -e ''s/\\x9d//g'' -e ''s/\\x81//g'' -e ''s/\\x8f//g'' '
 COPY 20404
 ```
 
-Finally. That was exhausting. Time for a nap.
+Finally, the entire file loaded!
 
-<figure style="width: 800px" class="align-center">
-  <a href="/assets/images/nap-time.jpeg" title="Nap Time" alt="napping cat">
-  <img src="/assets/images/nap-time.jpeg" alt="napping cat"></a>
-  <figcaption>Napping cat</figcaption>
-</figure>
 
-### A better way to validate encoding?
+### There must be an easier way
 
 There must be an easier to validate encoding than loading data into Postgres, preferably using builtin tools. Despite a fair amount of searching, I haven't found it yet.
