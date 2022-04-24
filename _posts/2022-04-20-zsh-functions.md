@@ -60,7 +60,7 @@ This is what I've learned.
 
 You can define a function on the command line:
 
-```
+```zsh
 fn() {
     print I am a function
 }
@@ -79,7 +79,7 @@ I am a function
 
 The spacing and new lines in this example are optional. The same function can be written as concisely as:
 
-```
+```zsh
 fn(){print i am a function}
 ```
 
@@ -109,7 +109,7 @@ The shell uses special variables, known as *positional parameters*, to pass argu
 
 This function prints the number of arguments passed to it and the arguments:
 
-```
+```zsh
 args() {
   print $# $*
 }
@@ -211,7 +211,7 @@ As you can see, using `--` with `set` and `print` is a good habit to get into.
 
 This is a common shell syntax for testing things:
 
-```
+```zsh
 if [[ -n $* ]]; then
   print yes
 else
@@ -227,20 +227,20 @@ There are many tests you can perform. See [CONDITIONAL EXPRESSIONS](https://zsh.
 
 In the shell, new lines and semicolons mean the same thing and are interchangeable. So, the same test could be rewritten as:
 
-```
+```zsh
 if [[ -n $* ]]; then; print yes; else; print no; fi
 ```
 
 The *logical command connectors* && and \|\| provide an even shorter syntax for testing. The && executes the command that follows if the prior command succeeded, while \|\| executes the command that follows if the prior command failed.
 
-```
+```zsh
 true  &&  print Previous command returned true
 false  ||  print Previous command returned false
 ```
 
 Using this form, our test can be rewritten as:
 
-```
+```zsh
 [[ -n $* ]] && print yes || print no
 ```
 
@@ -248,7 +248,7 @@ Using this form, our test can be rewritten as:
 See [3.81.1: Logical command connectors](https://zsh.sourceforge.io/Guide/zshguide03.html#l67) in the User's Guide.
 {% endcapture %}<div class="notice--info">{{ see-connectors | markdownify }}</div>
 
-With these methods, we can easily verify our test works in the shell before trying it a function.
+With these methods, we can easily verify our test works in the shell before trying it as a function.
 
 ```
 % set some arguments
@@ -263,7 +263,7 @@ empty
 
 With notes stored at `~/notes`, when this function is called with the name of a note, the note is displayed in `less`. Called without arguments, all the notes are listed.
 
-```
+```zsh
 note() {
   if [[ -n $* ]]; then
     less ~/notes/$*
@@ -280,7 +280,7 @@ The easiest way to save a function is to add it to your zsh customizations, typi
 
 You'll probably want to do that with a text editor, but if you've already entered the function into the shell, you can append its definition to `~/.zshrc` like this:
 
-```
+```zsh
 print -- "\n\n$(which note)" >> ~/.zshrc
 ```
 
