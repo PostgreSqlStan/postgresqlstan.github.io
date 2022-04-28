@@ -1,12 +1,12 @@
 ---
 date: 2022-04-20
-last_modified_at: 2022-04-24
+last_modified_at: 2022-04-28
 title: "Dig into zsh: How to Function (part 1)"
 category: zsh
 tags:
   - CLI
   - shell functions
-excerpt: "Join me for a hands-on exploration of writing a shell function in zsh."
+excerpt: "A hands-on exploration of writing a shell function in zsh."
 header:
   overlay_image: /assets/headers/digging.jpg
   overlay_filter: 0.3 # same as adding an opacity of 0.5 to a black background
@@ -260,6 +260,8 @@ empty
 ```
 
 ## The function
+
+Putting everything together, it's time to write my first function.
 
 With notes stored at `~/notes`, when this function is called with the name of a note, the note is displayed in `less`. Called without arguments, all the notes are listed.
 
