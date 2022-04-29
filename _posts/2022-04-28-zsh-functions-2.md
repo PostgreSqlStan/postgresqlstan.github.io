@@ -158,7 +158,7 @@ if [[ -z ${fpath[(r)$my_functions]} ]] ; then
 fi
 ```
 
-The '(r)' *subscript flag* above returns an empty string if the expression that follows it (`my_functions`) doesn't match any element in the array. The '-z' test flag returns true if the string is empty.
+The `(r)` *subscript flag* above returns an empty string if the expression that follows it (`my_functions`) doesn't match any element in the array. The '-z' test flag returns true if the string is empty.
 <br><br>See [Subscript Flags](https://zsh.sourceforge.io/Doc/Release/Parameters.html#Subscript-Flags) in the zshparam manual pages for more information.
 {: .notice}
 
