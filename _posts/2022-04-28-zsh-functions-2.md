@@ -128,7 +128,7 @@ autoload -Uz ${fpath[1]}/*(:t)
 ```
 
 The `${fpath[1]}/*` expands to all the files in the first directory listed in $fpath. The `(:t)` is a *globbing modifier* which takes the tail (basename) of all the files in the list.
-<br><br>See [Modifiers](/https://zsh.sourceforge.io/Doc/Release/Expansion.html#Modifiers) in the zshexpn manual pages for more information.
+<br><br>See [Modifiers](https://zsh.sourceforge.io/Doc/Release/Expansion.html#Modifiers) in the zshexpn manual pages for more information.
 {: .notice}
 
 
