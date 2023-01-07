@@ -18,7 +18,7 @@ As soon as I started trying to address shortcomings with the `note` function fro
 
 So, this tutorial is about loading functions from a personal directory. I'll return to the `note` function in a future post.
 
-If you're just looking an example of configuring zsh to load a directory of functions, jump to the [end](http://localhost:4000/zsh/zsh-functions-2/#configuring-zsh-to-load-functions). If you want to understand how the process works, continue reading.
+If you're just looking an example of configuring zsh to load a directory of functions, jump to the [end](#configuring-zsh-to-load-functions). If you want to understand how the process works, continue reading.
 
 ## Loading functions from a directory
 
