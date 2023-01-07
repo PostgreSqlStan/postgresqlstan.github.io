@@ -1,6 +1,6 @@
 ---
 date: 2022-04-28
-last_modified_at: 2022-04-30
+last_modified_at: 2023-01-06
 title: "Dig into zsh: How to Function (part 2)"
 category: zsh
 tags:
