@@ -1,5 +1,5 @@
 ---
-# last_modified_at: 2023-01-17
+last_modified_at: 2023-01-17
 title: "error loading JSON into postgres"
 category:
 tags:
@@ -116,3 +116,29 @@ select string_agg(t,E'\n')::jsonb from t;
 
 No error.
 
+## Update
+
+As I suspect, loading as a binary JSON avoids this error.
+
+Method from: [http://blog.rhodiumtoad.org.uk/2018/02/11/loading-data-from-json-files/](http://blog.rhodiumtoad.org.uk/2018/02/11/loading-data-from-json-files/)
+
+From psql:
+
+```
+set search_path to jsonproblem;
+\set filename datapackage.json
+\set ON_ERROR_ROLLBACK interactive
+begin;
+\lo_import :filename
+\set obj :LASTOID
+create table testtab as
+  select *
+    from convert_from(lo_get(:'obj'),'UTF8') as t;
+-- clean up the object
+\lo_unlink :obj
+commit;
+```
+
+Loaded this way, `select t::jsonb from testtab;` produces no error.
+
+🥹
