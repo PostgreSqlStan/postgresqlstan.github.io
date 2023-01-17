@@ -4,8 +4,12 @@ title: "Postgres mystery: why does VACUUM prevent an error?"
 category: PostgreSQL
 tags:
   - note to self
+classes: wide
+excerpt: "Will revisit this issue. (Any errors with postgres are likely my fault.)"
 header:
-  teaser: /assets/teasers/cat-laptop.jpg
+  overlay_image: /assets/headers/psqlstan.jpg
+  overlay_filter: 0.8
+  teaser: /assets/headers/psqlstan.jpg
 ---
 
 When I run this psql script I get an error:
