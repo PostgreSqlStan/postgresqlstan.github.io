@@ -7,7 +7,9 @@ tags:
 classes: wide
 excerpt: "Using roles in PostgreSQL, it's easy to give yourself superuser privileges that can be invoked when needed, somewhat similar to using the sudo command on a Unix-compatible platform."
 header:
-  teaser: /assets/teasers/limited-superpowers.jpg
+  overlay_image: /assets/headers/psqlstan.jpg
+  overlay_filter: 0.8
+  teaser: /assets/headers/psqlstan.jpg
 ---
 
 {% capture notice-0 %}
