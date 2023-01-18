@@ -1,16 +1,18 @@
 ---
 last_modified_at: 2023-01-17
-title: "error loading JSON into postgres"
+title: "Loading JSON into Postgres (learning notes)"
 category:
 tags:
   - note to self
 classes: wide
-excerpt: "Will revisit this issue. (Any errors with postgres are likely my fault.)"
+excerpt: "Lesson: load JSON as binary to avoid (strange) problems with escaped characters"
 header:
   overlay_image: /assets/headers/psqlstan.jpg
   overlay_filter: 0.8
   teaser: /assets/headers/psqlstan.jpg
 ---
+
+Dangers of trying to load JSON as lines of text into Postgres.
 
 ## reproduce error (on my machine)
 
@@ -116,9 +118,9 @@ select string_agg(t,E'\n')::jsonb from t;
 
 No error.
 
-## Update
+## Solution
 
-As I suspect, loading as a binary JSON avoids this error.
+As suspected, loading as a binary JSON avoids this error.
 
 Method from: [http://blog.rhodiumtoad.org.uk/2018/02/11/loading-data-from-json-files/](http://blog.rhodiumtoad.org.uk/2018/02/11/loading-data-from-json-files/)
 
