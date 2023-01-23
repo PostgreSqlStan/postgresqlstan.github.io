@@ -1,14 +1,14 @@
 main:
-  - title: "About"
-    url: /about/
-    description: "Why and how this site is built"
-  # - title: "Guides"
-  #   url: /guides/
-  #   description: "Step by step guides"
+  - title: "Guides"
+    url: /guides/
+    description: "Potentially useful stuff on the site"
   - title: "Categories"
     url: /categories/
   - title: "Tags"
     url: /tags/
+  - title: "About"
+    url: /about/
+    description: "Why and how this site is built"
 
 guides:
   - title: "Install PostgreSQL on macOS"
