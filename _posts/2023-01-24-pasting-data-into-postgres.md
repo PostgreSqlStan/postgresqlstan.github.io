@@ -82,5 +82,3 @@ table birthtoken;
  December  │ Turquoise  │ Narcissus
 (12 rows)
 ```
-
-Using `stdin` is easier than specifying a file, and much easier than generating SQL statements to insert data.
