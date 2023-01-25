@@ -1,22 +1,20 @@
 ---
-# last_modified_at: 2023-01-23
+last_modified_at: 2023-01-24
 title: "Self-concatenating table"
 category: PostgreSQL
 tags:
   - Questionable practices
 classes: wide
-excerpt: "(Don't try this in production.)"
+excerpt: "Probably a terrible idea, but I couldn't resist trying."
 header:
   overlay_image: /assets/headers/psql_stan.jpg
   overlay_filter: 0.8
   teaser: /assets/teasers/terminal.jpg
 ---
 
-Can I make a postgres table automagically concatenate itself into a single row? 🧐
+Can I make a postgres table automagically concatenates itself into a single row? 🧐 Let's find out.
 
-Probably a terrible idea, but I couldn't resist trying.
-
----
+## :warning: Don't try this in production
 
 Create a schema/table to play with:
 
@@ -58,7 +56,7 @@ CREATE TRIGGER concatenate_rows AFTER INSERT ON demo
   EXECUTE FUNCTION tf_concatenate_rows();
 ```
 
-Now, let's see what this bad boy can do:
+Let's see what this bad boy can do:
 
 ```
 stan=> insert into demo select 'insert first row';
@@ -156,7 +154,4 @@ stan=> table demo;
 (1 row)
 ```
 
-It works, but it is more complicated than using a query or function. No real gain here; I just wanted to see if was possible.
-
-
-
+*It works, but it is more complicated than using a query in a view or procedure. No real gain here; I just wanted to see if was possible.*

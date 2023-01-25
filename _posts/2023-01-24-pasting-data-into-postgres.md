@@ -1,5 +1,5 @@
 ---
-# last_modified_at: 2023-01-24
+last_modified_at: 2023-01-24
 title: "psql: how to paste data into a table"
 category: PostgreSQL
 tags:
@@ -33,11 +33,13 @@ November:Topaz:Chrysanthemum
 December:Turquoise:Narcissus
 ```
 
+---
+
 In psql, create an appropriate schema and table:
 
 ```sql
-create schema paste;
-set search_path to paste;
+create schema paste_demo;
+set search_path to paste_demo;
 create table birthtoken(month text, stone text, flower text);
 ```
 
