@@ -1,5 +1,5 @@
 ---
-last_modified_at: 2023-01-24
+last_modified_at: 2023-01-26
 title: "Self-concatenating table"
 category: PostgreSQL
 tags:
@@ -12,7 +12,7 @@ header:
   teaser: /assets/teasers/terminal.jpg
 ---
 
-Can I make a postgres table automagically concatenates itself into a single row? 🧐 Let's find out.
+Can I make a postgres table automagically concatenate itself into a single row? 🧐 Let's find out.
 
 ## :warning: Don't try this in production
 

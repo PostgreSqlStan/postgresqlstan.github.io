@@ -1,5 +1,5 @@
 ---
-# last_modified_at: 2023-01-22
+last_modified_at: 2023-01-26
 title: "Importing multiline JSON objects into PostgreSQL"
 category: PostgreSQL
 tags: psql JSON pgtab
@@ -17,7 +17,7 @@ This is what I've learned so far.
 
 ### simple JSON: import as tab delimited
 
-I'll start with this minimal Tabular Data Package [example](https://specs.frictionlessdata.io/tabular-data-package/#example), which I copied and saved as `datapackages.json`.
+I'll start with this minimal Tabular Data Package [example](https://specs.frictionlessdata.io/tabular-data-package/#example), which I copied and saved as `datapackage.json`.
 
 ```json
 {

@@ -1,5 +1,5 @@
 ---
-last_modified_at: 2023-01-24
+last_modified_at: 2023-01-26
 title: "psql: how to paste data into a table"
 category: PostgreSQL
 tags:
@@ -10,7 +10,7 @@ excerpt: "`\\copy mytable from stdin + paste + \\. + enter`"
 header:
   overlay_image: /assets/headers/psql_stan.jpg
   overlay_filter: 0.8
-  teaser: /assets/teasers/terminal.jpg
+  teaser: /assets/teasers/copy-from-stdin.jpg
 ---
 
 Using [stdin](https://en.wikipedia.org/wiki/Standard_streams) is an easy and convenient way to enter or paste multiple lines of data in psql, something I wish I'd learned **much** earlier.
