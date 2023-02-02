@@ -13,6 +13,10 @@ header:
 
 So far, the most useful thing I've learned about zsh is how to enable the `run-help` function, which makes it much easier to learn even more.
 
+{% capture notice-0 %}
+These directions are for macOS, which does not enable the `run-help` function by default. If this solution works for other platforms, please [let me know](https://github.com/PostgreSqlStan/postgresqlstan.github.io/discussions/new/choose).
+{% endcapture %}<div class="notice">{{ notice-0 | markdownify }}</div>
+
 ## Enabling run-help
 
 Properly configured, the `run-help` function offers additional help files and easier access to documentation that lacks its own dedicated man page, like builtin shell commands.
@@ -20,20 +24,22 @@ Properly configured, the `run-help` function offers additional help files and ea
 Unfortunately, the `run-help` function is not enabled by default on macOS. To enable it, simply add these lines to your \~/.zshrc startup file:
 
 ```
-HELPDIR=/usr/share/zsh/5.8/help    # help files dir on macOS 12.1
+HELPDIR=/usr/share/zsh/5.8/help    # <-- necessary on macOS 12.1 --<
 unalias run-help 2>/dev/null       # don't display err if already done
 autoload run-help
 alias help=run-help                # optionally alias to help
 ```
+---
 
-**Update:** At some point Apple has changed something about the default zsh configuration resulting in the appropriate help directory being included in the environmental variables `fpath`:
+**Update:** At some point Apple has changed something about the default zsh configuration. The appropriate help directory is now included in the `fpath` environmental variable, eliminating the need to set the `HELPDIR` variable:
 
 ```
-% echo $fpath
-/Users/stan/functions /usr/local/share/zsh/site-functions /usr/share/zsh/site-functions /usr/share/zsh/5.8.1/functions
+# HELPDIR=/usr/share/zsh/5.8/help    # not needed on macos 13.2
+unalias run-help 2>/dev/null       # don't display err if already done
+autoload run-help
+alias help=run-help                # optionally alias to help
 ```
-
-I'm not sure which update make this change, which makes it unecessary (but harmless) to set `HELPDIR` to a correct value.
+---
 
 {% capture notice-1 %}
 
