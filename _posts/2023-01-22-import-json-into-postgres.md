@@ -169,7 +169,7 @@ Finally, a slightly more complicated [method](#rhodium) uses the psql `\lo_impor
 ## Sources
 
 <a name="dunstan"></a>Andrew Dunstan's PostgreSQL and Technical blog
-: [Importing JSON data](http://adpgtech.blogspot.com/2014/09/importing-json-data.html)
+: [Importing JSON data](http://adpgtech.blogspot.com/2014/09/importing-json-data.html) - *import with csv format*
 
 ```
 \copy t from datapackage.json csv quote e'\x01' delimiter e'\x02'
@@ -177,7 +177,7 @@ select string_agg(t, E'\n')::json from t;
 ```
 
 <a name="eval"></a>stackoverflow: Doctor Eval
-: [How can I import a JSON file into PostgreSQL?](https://stackoverflow.com/questions/39224382/how-can-i-import-a-json-file-into-postgresql/48396608#48396608) - load into psql variable
+: [How can I import a JSON file into PostgreSQL?](https://stackoverflow.com/questions/39224382/how-can-i-import-a-json-file-into-postgresql/48396608#48396608) - *load into psql variable*
 
 ```
 \set s `cat datapackage.json`
@@ -185,7 +185,7 @@ select jsonb_pretty(:'s'::jsonb);
 ```
 
 <a name="rhodium"></a>The Rhodium Toad
-: [Loading data from JSON files](http://blog.rhodiumtoad.org.uk/2018/02/11/loading-data-from-json-files/) -
+: [Loading data from JSON files](http://blog.rhodiumtoad.org.uk/2018/02/11/loading-data-from-json-files/) - *load as large object with lo_import*
 
 ```
 BEGIN;

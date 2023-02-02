@@ -1,6 +1,6 @@
 ---
 title: "zsh Tip: run-help is extremely helpful"
-last_modified_at: "2022-01-19 08:32"
+last_modified_at: "2023-02-02"
 category: CLI
 tags:
   - macOS
@@ -17,7 +17,7 @@ So far, the most useful thing I've learned about zsh is how to enable the `run-h
 
 Properly configured, the `run-help` function offers additional help files and easier access to documentation that lacks its own dedicated man page, like builtin shell commands.
 
-Enable the function by adding these commands to your \~/.zshrc startup file:
+Unfortunately, the `run-help` function is not enabled by default on macOS. To enable it, simply add these lines to your \~/.zshrc startup file:
 
 ```
 HELPDIR=/usr/share/zsh/5.8/help    # help files dir on macOS 12.1
@@ -25,6 +25,15 @@ unalias run-help 2>/dev/null       # don't display err if already done
 autoload run-help
 alias help=run-help                # optionally alias to help
 ```
+
+**Update:** At some point Apple has changed something about the default zsh configuration resulting in the appropriate help directory being included in the environmental variables `fpath`:
+
+```
+% echo $fpath
+/Users/stan/functions /usr/local/share/zsh/site-functions /usr/share/zsh/site-functions /usr/share/zsh/5.8.1/functions
+```
+
+I'm not sure which update make this change, which makes it unecessary (but harmless) to set `HELPDIR` to a correct value.
 
 {% capture notice-1 %}
 
