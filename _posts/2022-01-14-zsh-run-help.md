@@ -11,11 +11,7 @@ header:
   teaser: /assets/teasers/zsh-run-help.jpg
 ---
 
-So far, the most useful thing I've learned about zsh is how to enable the `run-help` function, an essential tool for learning more.
-
-## Enabling run-help
-
-Properly configured, the `run-help` function offers additional help files and easier access to documentation that lacks its own dedicated man page, like builtin shell commands.
+Properly configured, the zsh `run-help` function offers additional help files and much easier access to documentation than the man command. So far, it's most useful thing I've learned about zsh.
 
 To enable it, simply add these lines to your \~/.zshrc startup file:
 
@@ -25,11 +21,17 @@ autoload -Uz run-help              # load the function
 alias help=run-help                # optionally alias run-help to help
 ```
 
+You'll also want to set the shell parameter HELPDIR to the location of the `help` directory, typically in a subdirectory of `/usr/share/zsh/` or `/usr/local/share/zsh`.
+
+```zsh
+HELPDIR=/usr/share/zsh/5.8.1/help    # macos 13
+```
+
 {% capture notice-1 %}
 You can test these changes by entering them in the terminal. Any changes will be reverted when the window is closed.
 {% endcapture %}<div class="notice">{{ notice-1 | markdownify }}</div>
 
-An additional `help` directory also contains information for several commands whose documentation is located deep in zsh manual pages. For example, when configured to use the `help` directory `run-help` shows this information for the `history` command:
+If configured correctly, `run-help` should show this information for the `history` command:
 
 ```shell
  % help history
@@ -43,20 +45,6 @@ fc -ARWI [ filename ]
 ```
 
 (To see how much easier this is, try locating the same information with `man history`. *Go ahead. I'll wait.*)
-
-To enable the additional help, locate the `help` directory, typically in a version subdirectory of `/usr/share/zsh/` or `/usr/local/share/zsh`, and set the `HELPDIR` parameter to its location.
-
-```zsh
-HELPDIR=/usr/share/zsh/5.8.1/help    # macos 13
-```
-
-Once `HELPDIR` is set correctly, `run-help -l` will list additional help topics instead of this message:
-
-```
-% run-help -l
-There is no list of special help topics available at this time.
-```
----
 
 *But, wait, there's more.*
 
