@@ -1,6 +1,6 @@
 ---
+last_modified_at: "2023-02-11"
 title: "zsh Tip: run-help is extremely helpful"
-last_modified_at: "2023-02-02"
 category: CLI
 tags:
   - macOS
@@ -11,44 +11,25 @@ header:
   teaser: /assets/teasers/zsh-run-help.jpg
 ---
 
-So far, the most useful thing I've learned about zsh is how to enable the `run-help` function, which makes it much easier to learn even more.
-
-{% capture notice-0 %}
-These directions are for macOS, which does not enable the `run-help` function by default. If this solution works for other platforms, please [let me know](https://github.com/PostgreSqlStan/postgresqlstan.github.io/discussions/new/choose).
-{% endcapture %}<div class="notice">{{ notice-0 | markdownify }}</div>
+So far, the most useful thing I've learned about zsh is how to enable the `run-help` function, an essential tool for learning more.
 
 ## Enabling run-help
 
 Properly configured, the `run-help` function offers additional help files and easier access to documentation that lacks its own dedicated man page, like builtin shell commands.
 
-Unfortunately, the `run-help` function is not enabled by default on macOS. To enable it, simply add these lines to your \~/.zshrc startup file:
+To enable it, simply add these lines to your \~/.zshrc startup file:
 
-```
-HELPDIR=/usr/share/zsh/5.8/help    # <-- necessary on macOS 12.1 --<
+```zsh
 unalias run-help 2>/dev/null       # don't display err if already done
-autoload run-help
-alias help=run-help                # optionally alias to help
+autoload -Uz run-help              # load the function
+alias help=run-help                # optionally alias run-help to help
 ```
----
-
-**Update:** At some point Apple has changed something about the default zsh configuration. The appropriate help directory is now included in the `fpath` environmental variable, eliminating the need to set the `HELPDIR` variable:
-
-```
-# HELPDIR=/usr/share/zsh/5.8/help    # not needed on macos 13.2
-unalias run-help 2>/dev/null       # don't display err if already done
-autoload run-help
-alias help=run-help                # optionally alias to help
-```
----
 
 {% capture notice-1 %}
+You can test these changes by entering them in the terminal. Any changes will be reverted when the window is closed.
+{% endcapture %}<div class="notice">{{ notice-1 | markdownify }}</div>
 
-You can test these commands by entering them in the terminal. Any changes will be reverted when the window is closed.
-
-Some features of `run-help` are dependent on files in the directory indicated by the shell variable HELPDIR. The directory location will vary by installation.
-{% endcapture %}<div class="notice--warning">{{ notice-1 | markdownify }}</div>
-
-To learn more about the `history` command, for example, you can now jump straight to the relevant information:
+An additional `help` directory also contains information for several commands whose documentation is located deep in zsh manual pages. For example, when configured to use the `help` directory `run-help` shows this information for the `history` command:
 
 ```shell
  % help history
@@ -61,21 +42,35 @@ fc -ARWI [ filename ]
        The fc command controls the interactive history mechanism.  Note…
 ```
 
-To see how much easier this is, try locating the same information with `man history`. (Go ahead. I'll wait.)
+(To see how much easier this is, try locating the same information with `man history`. *Go ahead. I'll wait.*)
+
+To enable the additional help, locate the `help` directory, typically in a version subdirectory of `/usr/share/zsh/` or `/usr/local/share/zsh`, and set the `HELPDIR` parameter to its location.
+
+```zsh
+HELPDIR=/usr/share/zsh/5.8.1/help    # macos 13
+```
+
+Once `HELPDIR` is set correctly, `run-help -l` will list additional help topics instead of this message:
+
+```
+% run-help -l
+There is no list of special help topics available at this time.
+```
+---
 
 *But, wait, there's more.*
 
-### Invoke run-help with ESC-h
+### Run run-help with option-h
 
-Verify bindings for the `run-help` function:
+Enter a command (without pressing enter) and press ESC-h to run the help function for it. (Option-h if your terminal is configured to use option as meta key.)
 
-```shell
+Use `bindkey` to verify the bindings:
+
+```zsh
 %  bindkey | grep run-help
 "^[H" run-help
 "^[h" run-help
 ```
-
-The `run-help` function can also be invoked by pressing "ESC" then "h" after typing any command (without pressing return).
 
 ## Credit
 
@@ -84,11 +79,12 @@ Ironically, the documentation for `run-help` is too deeply hidden in the zshcont
 I might have found it eventually, but probably not. Credit goes to helpful contributors at
 [Stack Exchange](https://stackoverflow.com/questions/4405382/how-can-i-read-documentation-about-built-in-zsh-commands).
 
+
 ## Appendum
 
 I discovered additional help modules mentioned in the zshcontrib man pages which can be enabled by autoloading them:
 
-```shell
+```zsh
 autoload run−help−git
 autoload run−help−ip
 autoload run−help−openssl
@@ -97,7 +93,3 @@ autoload run−help−sudo
 autoload run−help−svk
 autoload run−help−svn
 ```
-
-
-
-
