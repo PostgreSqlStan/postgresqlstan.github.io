@@ -10,9 +10,9 @@ header:
 **postgres**
 
 - [Set Up PostgreSQL for Learning with Schemas](../postgresql/postgres-schemas/)
-- [PostgreSQL - Grant Yourself Limited Superpowers](../limited-superpowers/)
-- [Importing multiline JSON objects into postgres](https://postgresqlstan.github.io/postgresql/import-json-into-postgres/)
-- [psql Tip: Use stdin to paste data in psql](https://postgresqlstan.github.io/postgresql/pasting-data-into-postgres/)
+- [PostgreSQL - Grant Yourself Limited Superpowers](../postgresql/limited-superpowers/)
+- [Importing multiline JSON objects into postgres](../postgresql/import-json-into-postgres/)
+- [psql Tip: Use stdin to paste data in psql](../postgresql/pasting-data-into-postgres/)
 
 **macOS**
 - [Install PostgreSQL from source on macOS](./install-postgres/)
