@@ -7,9 +7,9 @@ tags:
   - psql
 excerpt: "Redirecting output is a very easy way to copy psql query output."
 header:
-  overlay_image: /assets/headers/pg-bg.jpg
-  overlay_filter: 0.8
-  teaser: /assets/headers/matrix.jpg
+  overlay_image: /assets/headers/matrix.jpg
+  overlay_filter: 0.4
+  teaser: /assets/teasers/psql-copy-output.jpg
 ---
 
 Recently, while practicing the art of reading postgres query plans, I was reminded how useful this “trick” is and realized I should share it.
