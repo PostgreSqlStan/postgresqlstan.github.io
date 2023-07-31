@@ -21,7 +21,7 @@ To re-run the previous query and send the output to the macOS clipboard:
 ```
 
 {% capture n1 %}
-The psql meta-command `\g` redirects output to the shell and `| pbcopy` pipes it to the macOS clipboard. Programs similar to `pbcopy` are available for Linux; I don't know about Windows.
+The psql meta-command `\g` redirects output to [standard output](https://en.wikipedia.org/wiki/Standard_streams) and the shell command `| pbcopy` pipes it to the macOS clipboard. Programs similar to `pbcopy` are available for Linux; I don't know about Windows.
 {% endcapture %}<div class="notice">{{ n1 | markdownify }}</div>
 
 For example, from psql:
