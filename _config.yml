@@ -43,7 +43,7 @@ plugins:
 author:
   name   : "PostgreSQL Stan"
   avatar : "/assets/images/bio-photo.jpg"
-  bio    : "Blogging my adventures with command line software on macOS."
+  bio    : "A blog about PostgreSQL and other command line tools."
   location: "Tulsa, OK"
   links:
     - label: "Twitter"
