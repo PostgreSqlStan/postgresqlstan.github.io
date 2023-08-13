@@ -115,3 +115,10 @@ select unnest(a) as columns_to_rows2 from r_array;
 It works, but I hate it. There's got to be a more sensible way.
 
 I'll update this post if I learn anything useful.
+
+## Update
+
+Shortly posting the question on Twitter, [@dsl4life](https://twitter.com/dsl4life/status/1690719203450384385?s=61&t=pcpcP_xWoU0AGriPXTnxlQ) offered a small but significant improvement:
+
+![screenshot](/assets/images/solution3.jpg)
+
