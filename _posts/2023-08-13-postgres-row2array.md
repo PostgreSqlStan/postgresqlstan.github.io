@@ -74,7 +74,7 @@ DETAIL:  Array value must start with "{" or dimension information.
 
 ## Solutions
 
-For clarity, each is broken down to a separate query in a CTE.
+For clarity, each step in the conversion is broken down to a separate query in a CTE.
 
 ### Solution 1
 
