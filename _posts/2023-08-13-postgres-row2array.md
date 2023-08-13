@@ -2,7 +2,7 @@
 excerpt: "Surely, there's an easier way."
 classes: wide
 last_modified_at: 2023-08-13
-title: "PostreSQL: Cast a row into an array?"
+title: "PostgreSQL: Cast a row into an array?"
 category: PostgreSQL
 tags:
   - note to self
