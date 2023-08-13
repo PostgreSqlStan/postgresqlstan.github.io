@@ -76,8 +76,8 @@ DETAIL:  Array value must start with "{" or dimension information.
 
 For clarity, each step in the conversion is broken down to a separate query in a CTE.
 
-### Solution 1
 
+### Solution 1
 
 Here'a a solution I copied from somewhere on  the internet a long time ago. It uses json functions for the row-to-array conversion.
 
@@ -115,5 +115,3 @@ select unnest(a) as columns_to_rows2 from r_array;
 It works, but I hate it. There's got to be a more sensible way.
 
 I'll update this post if I learn anything useful.
-
-

@@ -1,12 +1,11 @@
 ---
-# last_modified_at: 2023-01-13
 title: "PostgreSQL: Installing pagila"
 category: PostgreSQL
 excerpt: "Step by step: How to install the pagila database in a local postgres cluster."
 header:
   overlay_image: /assets/headers/matrix.jpg
   overlay_filter: 0.4
-  teaser: /assets/headers/matrix.jpg
+  teaser: /assets/teasers/install-pagila.jpg
 ---
 
 ## What's pagila?
