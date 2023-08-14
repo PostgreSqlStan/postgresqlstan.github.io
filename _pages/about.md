@@ -1,5 +1,6 @@
 ---
 permalink: /about/
+classes: wide
 title: "About this Site"
 author_profile: true
 header:
@@ -7,11 +8,11 @@ header:
   caption: "[Original by Brucewaters](https://commons.wikimedia.org/wiki/File:M31,_the_Andromeda_Galaxy,_Killarney_Provincial_Park_Observatory.jpg), [CC BY 4.0](https://creativecommons.org/licenses/by/4.0), via Wikimedia Commons"
 ---
 
-Links, notes, tips, and articles about PostgreSQL and other command line data tools.
+:speaking_head: Command line interfaces are underrated.
 
-I learn a lot by writing about technology and hope some of my posts help others learn as well.
+I blog about command line tools, mainly PostgreSQL, hoping to make the world a better place by helping others discover the power of typing commands (instead of clicking).
 
-
+Get updates via [RSS](/feed.xlm).
 
 {% capture notice-2 %}
 This site is built with [Git Pages](https://pages.github.com) and [Jekyll](https://jekyllrb.com) using the [Minimal Mistakes](https://mmistakes.github.io/minimal-mistakes/) theme. See [Build a blog site with a web browser](https://postgresqlstan.github.io/blog/build-free-blog/) for more information.

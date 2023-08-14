@@ -1,4 +1,5 @@
 ---
+classes: wide
 date: 2022-04-20
 last_modified_at: 2022-04-28
 title: "Dig into zsh: How to Function (part 1)"

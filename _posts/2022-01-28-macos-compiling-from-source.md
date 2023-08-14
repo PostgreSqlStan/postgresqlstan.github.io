@@ -1,4 +1,5 @@
 ---
+classes: wide
 title: "Compiling from source on macOS"
 last_modified_at: "2022-01-29 04:33"
 category: CLI

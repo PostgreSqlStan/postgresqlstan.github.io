@@ -1,4 +1,5 @@
 ---
+classes: wide
 last_modified_at: 2022-02-24
 title: "Learning how to use Postgres procedures"
 category: PostgreSQL

@@ -1,4 +1,5 @@
 ---
+classes: wide
 last_modified_at: 2022-04-20
 updated: 2022-04-20
 title: "Tangled Up in Encoding"

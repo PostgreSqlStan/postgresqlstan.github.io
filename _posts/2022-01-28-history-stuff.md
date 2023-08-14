@@ -1,4 +1,5 @@
 ---
+classes: wide
 title: "Random shell (zsh) history stuff"
 category: macOS
 tags:

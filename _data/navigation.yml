@@ -5,7 +5,7 @@ main:
     url: /tags/
   - title: "About"
     url: /about/
-    description: "Why and how this site is built"
+    description: "About this site"
 
 guides:
   - title: "Install PostgreSQL on macOS"

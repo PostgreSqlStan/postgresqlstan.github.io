@@ -1,4 +1,5 @@
 ---
+classes: wide
 last_modified_at: 2021-12-29
 title: "Installing Jekyll on macOS Monterey"
 category: Jekyll

@@ -1,4 +1,5 @@
 ---
+classes: wide
 link: /guides/install-postgres/
 title: "Install PostgreSQL from source on macOS"
 category: PostgreSQL

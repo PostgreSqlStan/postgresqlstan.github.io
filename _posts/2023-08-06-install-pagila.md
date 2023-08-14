@@ -1,4 +1,5 @@
 ---
+classes: wide
 title: "PostgreSQL: Installing pagila"
 category: PostgreSQL
 excerpt: "Step by step: How to install the pagila database in a local postgres cluster."
