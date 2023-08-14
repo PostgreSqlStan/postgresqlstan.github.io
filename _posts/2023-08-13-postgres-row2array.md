@@ -1,11 +1,9 @@
 ---
+last_modified_at: 2023-08-14
 excerpt: "Surely, there's an easier way."
 classes: wide
-last_modified_at: 2023-08-13
 title: "PostgreSQL: Cast a row into an array?"
 category: PostgreSQL
-tags:
-  - note to self
 header:
   overlay_image: /assets/teasers/row2array.jpg
   overlay_filter: 0.7
@@ -118,7 +116,12 @@ I'll update this post if I learn anything useful.
 
 ## Update
 
-Shortly posting the question on Twitter, [@dsl4life](https://twitter.com/dsl4life/status/1690719203450384385?s=61&t=pcpcP_xWoU0AGriPXTnxlQ) offered a small but significant improvement:
+Not a huge improvement, but I like the conciseness of using lateral joins with the json method:
+
+<blockquote class="twitter-tweet" data-conversation="none"><p lang="en" dir="ltr">Not much nicer just a little shorter and no ctes: <a href="https://t.co/mDCJcXd1Ka">pic.twitter.com/mDCJcXd1Ka</a></p>&mdash; Alastair McKinley (@dsl4life) <a href="https://twitter.com/dsl4life/status/1690719203450384385?ref_src=twsrc%5Etfw">August 13, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+<!-- [@dsl4life](https://twitter.com/dsl4life/status/1690719203450384385?s=61&t=pcpcP_xWoU0AGriPXTnxlQ) offered a small but significant improvement:
 
 ![screenshot](/assets/images/solution3.jpg)
-
+ -->
