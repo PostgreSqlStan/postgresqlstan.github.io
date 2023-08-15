@@ -43,7 +43,7 @@ plugins:
 author:
   name   : "PostgreSQL Stan"
   avatar : "/assets/images/bio-photo.jpg"
-  bio    : ":elephant: postgres fanatic<br>command line aficionado"
+  bio    : "postgres fan<br>cli aficionado"
   location: "Tulsa, OK"
   links:
     - label: "Twitter"
