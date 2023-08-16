@@ -10,7 +10,7 @@ header:
 
 I blog about command line tools for data, mainly PostgreSQL and shell commands (zsh on macOS).
 
-As a command line aficionado, I hope to demonstrate how typing commands in an old-fashioned terminal can often be faster and easier than clicking on things, especially when manipulating data.
+As a command line aficionado, I hope to demonstrate how typing commands can often be faster and easier than clicking on things, especially when manipulating data.
 
 Get updates via [RSS](/feed.xlm).
 

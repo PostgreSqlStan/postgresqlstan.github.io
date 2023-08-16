@@ -30,20 +30,22 @@ Test the changes shown here by entering them in the terminal. Any changes will b
 
 You'll also want to set the shell parameter HELPDIR to the location of the `help` directory, typically in a subdirectory of `/usr/share/zsh/` or `/usr/local/share/zsh`.
 
-```zsh
+<!-- ```zsh
 HELPDIR=/usr/share/zsh/5.8.1/help    # macos 13
 ```
+ -->
 
----
+ ~~`HELPDIR=/usr/share/zsh/5.8.1/help` # macOS 13~~
 
-**Update**: Because macOS updates sometimes changes the version of zsh and, accordingly, the location of the help directory, I've updated my `.zshrc` file to set `HELPDIR` dynamically:
+**Update**: Because macOS updates to zsh also change the location of the help directory, I've updated my `.zshrc` file to set `HELPDIR` dynamically.
 
 ```zsh
 HELPDIR="/usr/share/zsh/$(zsh --version | cut -d' ' -f2)/help"
 ```
-(There are probably better, more reliable ways to accomplish this. Please let me know if you have any suggestions.)
 
----
+(This works on macOS, but there are probably better, more reliable ways to accomplish. Please let me know if you have any suggestions.)
+
+
 
 If `HELPDIR` points to the correct directory, `run-help` should show this information for the `history` command:
 
@@ -85,7 +87,7 @@ I might have found it eventually, but probably not. Credit goes to helpful contr
 
 ## Appendum
 
-I discovered additional help modules mentioned in the zshcontrib man pages which can be enabled by autoloading them:
+I discovered additional help modules (mentioned in the zshcontrib man pages) which can be enabled by autoloading them:
 
 ```zsh
 autoload run−help−git
