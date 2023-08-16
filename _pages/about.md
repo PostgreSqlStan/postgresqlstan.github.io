@@ -8,9 +8,9 @@ header:
   caption: "[Original by Brucewaters](https://commons.wikimedia.org/wiki/File:M31,_the_Andromeda_Galaxy,_Killarney_Provincial_Park_Observatory.jpg), [CC BY 4.0](https://creativecommons.org/licenses/by/4.0), via Wikimedia Commons"
 ---
 
-:speaking_head: Command line interfaces are underrated.
+I blog about command line tools for data, mainly PostgreSQL and shell commands (zsh on macOS).
 
-I blog about command line tools, mainly PostgreSQL, hoping to make the world a better place by helping others discover the power of typing commands (instead of clicking).
+As a command line aficionado, I hope to demonstrate how typing commands in an old-fashioned terminal can often be faster and easier than clicking on things, especially when manipulating data.
 
 Get updates via [RSS](/feed.xlm).
 

@@ -8,6 +8,8 @@ tags:
 excerpt: "Configure zsh to use the run-help function, making it easer to access documentation."
 classes: wide
 header:
+  overlay_image: /assets/headers/zsh-bg.jpg
+  overlay_filter: 0.7
   teaser: /assets/teasers/zsh-run-help.jpg
 ---
 

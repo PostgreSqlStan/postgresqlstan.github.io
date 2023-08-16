@@ -4,7 +4,6 @@ title: "psql: how to paste data into a table"
 category: PostgreSQL
 tags:
   - psql
-  - cli
 classes: wide
 excerpt: "`\\copy mytable from stdin + paste + \\. + enter`"
 header:
