@@ -1,5 +1,5 @@
 ---
-last_modified_at: "2023-02-11"
+last_modified_at: "2023-08-16"
 title: "zsh Tip: run-help is extremely helpful"
 category: CLI
 tags:
@@ -13,7 +13,7 @@ header:
   teaser: /assets/teasers/zsh-run-help.jpg
 ---
 
-Properly configured, the zsh `run-help` function offers additional help files and much easier access to documentation than the man command. So far, it's most useful thing I've learned about zsh.
+Properly configured, the zsh `run-help` function offers additional help files and much easier access to documentation than the `man` command.
 
 To enable it, simply add these lines to your \~/.zshrc startup file:
 
@@ -23,17 +23,29 @@ autoload -Uz run-help              # load the function
 alias help=run-help                # optionally alias run-help to help
 ```
 
+{% capture notice-1 %}
+Test the changes shown here by entering them in the terminal. Any changes will be reverted when the window is closed.
+{% endcapture %}<div class="notice--primary">{{ notice-1 | markdownify }}</div>
+
+
 You'll also want to set the shell parameter HELPDIR to the location of the `help` directory, typically in a subdirectory of `/usr/share/zsh/` or `/usr/local/share/zsh`.
 
 ```zsh
 HELPDIR=/usr/share/zsh/5.8.1/help    # macos 13
 ```
 
-{% capture notice-1 %}
-You can test these changes by entering them in the terminal. Any changes will be reverted when the window is closed.
-{% endcapture %}<div class="notice">{{ notice-1 | markdownify }}</div>
+---
 
-If configured correctly, `run-help` should show this information for the `history` command:
+**Update**: Because macOS updates sometimes changes the version of zsh and, accordingly, the location of the help directory, I've updated my `.zshrc` file to set `HELPDIR` dynamically:
+
+```zsh
+HELPDIR="/usr/share/zsh/$(zsh --version | cut -d' ' -f2)/help"
+```
+(There are probably better, more reliable ways to accomplish this. Please let me know if you have any suggestions.)
+
+---
+
+If `HELPDIR` points to the correct directory, `run-help` should show this information for the `history` command:
 
 ```shell
  % help history
@@ -48,7 +60,8 @@ fc -ARWI [ filename ]
 
 (To see how much easier this is, try locating the same information with `man history`. *Go ahead. I'll wait.*)
 
-*But, wait, there's more.*
+
+**But, wait, there's more!**
 
 ### Run run-help with option-h
 
