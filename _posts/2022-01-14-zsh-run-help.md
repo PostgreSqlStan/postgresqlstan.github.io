@@ -79,9 +79,7 @@ Use `bindkey` to verify the bindings:
 
 ## Credit
 
-Ironically, the documentation for `run-help` is too deeply hidden in the zshcontrib man page to be found by `run-help`.
-
-I might have found it eventually, but probably not. Credit goes to helpful contributors at
+Ironically, the documentation for `run-help` is too deeply hidden in the zshcontrib man page to be found by `run-help`. I might have found it eventually, but probably not. Credit goes to helpful contributors at
 [Stack Exchange](https://stackoverflow.com/questions/4405382/how-can-i-read-documentation-about-built-in-zsh-commands).
 
 
