@@ -168,12 +168,11 @@ I've limited my power. **Success!**
 
 ## Further reading
 
-PostgreSQL Documentation:
-
-* [CREATE ROLE](https://www.postgresql.org/docs/current/sql-createrole.html)
-* [ALTER ROLE](https://www.postgresql.org/docs/current/sql-alterrole.html)
-* [SET ROLE, RESET ROLE](https://www.postgresql.org/docs/current/sql-set-role.html)
-* [GRANT](https://www.postgresql.org/docs/current/sql-grant.html)
-* [REVOKE](https://www.postgresql.org/docs/current/sql-revoke.html)
-* [ROLE MEMBERSHIP](https://www.postgresql.org/docs/current/role-membership.html)
+PostgreSQL Documentation
+: [CREATE ROLE](https://www.postgresql.org/docs/current/sql-createrole.html)
+: [ALTER ROLE](https://www.postgresql.org/docs/current/sql-alterrole.html)
+: [SET ROLE, RESET ROLE](https://www.postgresql.org/docs/current/sql-set-role.html)
+: [GRANT](https://www.postgresql.org/docs/current/sql-grant.html)
+: [REVOKE](https://www.postgresql.org/docs/current/sql-revoke.html)
+: [ROLE MEMBERSHIP](https://www.postgresql.org/docs/current/role-membership.html)
 

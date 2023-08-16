@@ -54,15 +54,12 @@ CREATE TABLE
 INSERT 0 100
 ```
 
----
-
-{% capture n2 %}
-**Related:**<br>
-CLI Notes - [psql: how to paste data into a table](/postgresql/pasting-data-into-postgres/)<br>
-PostgreSQL Docs - [psql](https://www.postgresql.org/docs/current/app-psql.html)
-{% endcapture %}<div class="notice--primary">{{ n2 | markdownify }}</div>
 
 
+## Further reading
 
+PostgreSQL Documentation
+: [psql — PostgreSQL interactive terminal](https://www.postgresql.org/docs/current/app-psql.html)
 
-
+CLI Notes
+: [psql: how to paste data into a table](/postgresql/pasting-data-into-postgres/)

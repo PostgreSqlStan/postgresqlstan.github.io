@@ -7,7 +7,10 @@ tags:
 excerpt: "I read the docs so you don't have to."
 classes: wide
 header:
+  overlay_image: /assets/headers/zsh-bg.jpg
+  overlay_filter: 0.7
   teaser: /assets/teasers/zsh-history-options.jpg
+
 ---
 
 *I read the docs so you don't have to.*

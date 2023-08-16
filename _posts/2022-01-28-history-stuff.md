@@ -6,6 +6,8 @@ tags:
   - CLI
   - zsh
 header:
+  overlay_image: /assets/headers/zsh-bg.jpg
+  overlay_filter: 0.7
   teaser: /assets/teasers/history-notes.jpg
 ---
 
