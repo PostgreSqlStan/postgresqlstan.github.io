@@ -19,3 +19,18 @@ guides:
       url: /guides/install-postgres/post-install/
     - title: "Automating server startup"
       url: /guides/install-postgres/launchctl/
+
+dig-into-zsh:
+  - title: "Dig into Zsh<br>Learn to Function"
+    url: /guides/dig-into-zsh/
+    children:
+      - title: "Intro"
+        url: /guides/dig-into-zsh/
+      - title: "Function Basics"
+        url: /guides/dig-into-zsh/zsh-functions-1/
+      - title: "Autoloading"
+        url: /guides/dig-into-zsh/zsh-functions-2/
+      - title: "Autocompletions"
+        url: /guides/dig-into-zsh/zsh-functions-3/
+      - title: "Parsing Options"
+        url: /guides/dig-into-zsh/zsh-functions-4/

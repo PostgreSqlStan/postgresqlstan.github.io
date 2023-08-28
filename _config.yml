@@ -62,6 +62,7 @@ footer:
       icon: "fab fa-fw fa-github"
       url: "https://github.com/postgresqlstan"
 
+
 defaults:
   # _posts
   - scope:
@@ -82,14 +83,8 @@ defaults:
     values:
       layout: single
       author_profile: false
-  # _guides
-  - scope:
-      path: "/guides/"
-      type: guides
-    values:
-      layout: archive
-      show_date: true
-      author_profile: false
+
+
 
 category_archive:
   type: liquid
