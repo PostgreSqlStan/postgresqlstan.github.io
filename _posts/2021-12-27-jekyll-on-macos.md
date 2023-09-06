@@ -74,4 +74,3 @@ gem install --user-install ffi -- --enable-libffi-alloc
 
 I not sure how, but it fixed the problem and I was able to run jekyll.
 
-!["I did it!"](/assets/images/i-did-it.gif)
