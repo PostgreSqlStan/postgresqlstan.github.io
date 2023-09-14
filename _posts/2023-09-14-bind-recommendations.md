@@ -25,7 +25,7 @@ Now it's time to up my game. I've created a function, [bindlist](/zsh/bindlist/)
 
 Being able to view the bindings so easily is really useful, even more than I'd expected. I've already learned a couple things that had previously escaped my notice, hidden in a sea of special characters spanning several pages.
 
-Based on using zsh for a couple years and the lastest review, these are my observations and recommendations.
+Based on using zsh for a couple years and the lastest careful review, these are my observations and recommendations.
 
 ## Limitations
 
