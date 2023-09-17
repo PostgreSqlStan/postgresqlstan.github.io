@@ -4,6 +4,8 @@ title: "Zsh option parsing examples (gist)"
 category: zsh
 tags:
   - Links
+header:
+  teaser: /assets/teasers/optparsing_demo.jpg
 ---
 
 Everything I know about zparseopts I learned from this gist.
