@@ -6,6 +6,9 @@ header:
   overlay_filter: 0.7
   teaser: /assets/teasers/clone-prompt-theme.jpg
 excerpt: "Experimenting with a cloned `promptinit` theme."
+toc: true
+toc_sticky: true
+toc_label: Today I learned…
 ---
 
 *This part of my  attempt to share more TIL notes. Hopefully, with practice I'll get better at writing useful tips and less inclined to post rambling brain dumps.*
@@ -20,9 +23,9 @@ To demonstrate a sequence of commands in two different shells, I wanted to add a
 
 But the purple and red text is a bit hard on my old eyes. How hard could it be to change?
 
-### Experimenting with a copied theme
+## Experiment with a copied theme
 
-I don't know much about the `promptinit` module. But I know functions for various zsh interface enhancements are stored in `/usr/share/zsh/5.9/functions`. It wasn't difficult to find the function for the "bart" prompt:
+Functions for various zsh interface enhancements are stored in `/usr/share/zsh/5.9/functions`. It wasn't difficult to find the function for the "bart" prompt:
 
 ```
 % ls /usr/share/zsh/5.9/functions/*bart*
@@ -50,11 +53,8 @@ zefram myprompt
 This method adds the cloned theme to the current shell. To add a `promptinit` theme to your configuration, it must be located to a directory you've also added to `$fpath` prior to loading `promptinit`.
 {: .notice}
 
-Unfortunately, the [`prompt_bart_setup`](https://github.com/zsh-users/zsh/blob/master/Functions/Prompts/prompt_bart_setup) function is a bit more complicated than I'd hoped.
+Changing the colors it uses has been a challenge for me. I've made some progress but still haven't accomplished exactly what I want. I'll return to that story when I have more progress (understanding) to report.
 
 There are plenty of simpler prompt themes to dig into. Look for files in the zsh functions directory with "prompt" in the name.
 {: .notice--info}
-
-Changing the colors it uses has been a challenge for me. I've made some progress but still haven't accomplished exactly what I want. I'll return to that story when I have more progress (understanding) to report.
-
 

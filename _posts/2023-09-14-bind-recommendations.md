@@ -1,5 +1,5 @@
 ---
-# last_modified_at: 2023-09-14
+last_modified_at: 2023-09-17
 title: "zsh : Dig into key bindings (macOS)"
 category: zsh
 excerpt: "After a couple years of using zsh and yet another thorough review of key bindings, some observations and recommendations."
@@ -46,7 +46,7 @@ Some limitations I've encountered:
 These keys are undefined by default and avaiable for use:
 
   - <kbd>⌥</kbd> - E/e, I/i, J/j, K/k, M/m, O/o, R/r, V/v, X , Y , Z
-  - <kbd>⌥</kbd><kbd>ctrl</kbd> - It's possible bind a key with both control and option and no such bindings are used by default.
+  - <kbd>⌥</kbd><kbd>ctrl</kbd> - Many `⌥^` bindings, which are case insensitive, are unused.
   - <kbd>ctrl</kbd><kbd>z</kbd> - still works as a signal after binding another command to it
 {% endcapture %}<div class="notice--info">{{ n2 | markdownify }}</div>
 
@@ -57,7 +57,7 @@ I prefer to make the best of default settings, only making a change when it clea
 
 So far, I've only added five bindings, removed two that don't actually work, and removed another six redundant bindings I'm unlikely to ever use.
 
-I might update these at some point but don't expect them to change much, if at all.
+I might update these recommendations at some point but don't expect them to change much, if at all.
 
 ### Additional bindings
 
