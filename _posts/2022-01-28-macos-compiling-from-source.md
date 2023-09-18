@@ -87,7 +87,7 @@ The most common error is missing dependencies. If the dependencies are popular p
 
 Sometimes the error message contains a clear solution to the problem (a certain option or flag, file permission issue, installation location, etc) which is easy to understand. Even when I don't understand an error message, copying and searching the web for its cryptic text has helped me find a solution more often than not.
 
-If the errors are unresolvable, I look for a binary installer or consider using different software.
+If the errors are unsolvable, I look for a binary installer or consider using different software.
 
 ## Cleaning Up
 

@@ -27,7 +27,7 @@ stan=> create table demo(t text);
 CREATE TABLE
 ```
 
-Create a function that uses a temporary table to collect aggragated rows and reinsert them as a single row after emptying the table:
+Create a function that uses a temporary table to collect aggregated rows and reinsert them as a single row after emptying the table:
 
 ```sql
 CREATE OR REPLACE FUNCTION tf_concatenate_rows()
@@ -94,7 +94,7 @@ stan=> table demo;
 
 🙃
 
-Of course, I had a semi-useful purpose for trying this, concatenating multiline JSON objects into a single line.
+Of course, I had a semi-useful purpose for trying this, concatenating multi-line JSON objects into a single line.
 
 ```
 stan=> truncate demo;

@@ -87,20 +87,3 @@ Unlike `\pset`, if you don't provide a value for an option, it will be reset to 
 **Tab completion on Windows**: Tab completion is not available for psql on Windows but reportedly works for psql running on WSL (Windows Subsystem for Linux).
 {% endcapture %}<div class="notice--info">{{ notice3 | markdownify }}</div>
 
-<!-- - Tab completion for psql is provided by the Readline library on Linux and Editline library on BSD-based systems such as macOS. It is typically activated by pressing tab but can vary by configuration. -->
-
-
-<!-- With help from tab completion, changing psql settings interactively removes the need to memorize psql options or spend time searching through documentation. -->
-
-
-<!-- Tab completion removes the need to memorize psql options or spend time searching through documentation. -->
-
-<!-- Most psql settings can be changed interactively with `\pset` (for display settings) or `\set` (for other options). -->
-
-<!-- Display settings can be changed with `\pset` and other options with `\set`. -->
-
-<!-- Display settings can be changed with `\pset` and other options with `\set`. Tab completion provides concise, builtin cheatsheets, removing the need to memorize options or spend time searching through the excellent but lengthy documentation. -->
-
-<!-- ## Display Settings -->
-
-<!-- ## Options -->

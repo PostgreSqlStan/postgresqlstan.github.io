@@ -167,7 +167,7 @@ When you're done editing the file, click **Commit changes**.
 
 Every time you commit changes, a github-pages process will rebuild the site, usually taking a minute or two minute for small sites. 
 
-After commiting changes (and waiting for a couple minutes), my example site looks like this:
+After committing changes (and waiting for a couple minutes), my example site looks like this:
 
 ![example site screenshot](/assets/ss/free-blog/mm-example-site.jpg)
 

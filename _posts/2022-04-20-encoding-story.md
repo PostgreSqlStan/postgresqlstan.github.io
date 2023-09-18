@@ -45,7 +45,7 @@ To be clear, strict data validation is one of the many reasons I use postgres. T
 
 To check for other invalid byte sequences, I decided to filter out the lines containing "\xa0" and try to load the file again.
 
-Insead of editing the source file, I use the `program` option of the postgres `\copy` command to perform whatever filtering is needed. In this case, because the file is tab-delimited (despite the .csv suffix) and postgres only allows the `header` option with the csv format, I was already removing the first line of the file with the `tail` program:
+Instead of editing the source file, I use the `program` option of the postgres `\copy` command to perform whatever filtering is needed. In this case, because the file is tab-delimited (despite the .csv suffix) and postgres only allows the `header` option with the csv format, I was already removing the first line of the file with the `tail` program:
 
 ```
 > \copy _tmp from program 'tail -n +2 lyrics.csv'
@@ -188,4 +188,4 @@ Finally, the entire file loaded!
 
 ### Isn't there an easier way?
 
-I'm glad to learned how to inspect and convert invalid UTF8 bytes sequences. I just wish I didn't have to rely on postgres to find them. There's probably a builtin tool I can use to valididate encoding, but, despite a fair amount of searching, I haven't found it yet.
+I'm glad to learned how to inspect and convert invalid UTF8 bytes sequences. I just wish I didn't have to rely on postgres to find them. There's probably a builtin tool I can use to validate encoding, but, despite a fair amount of searching, I haven't found it yet.

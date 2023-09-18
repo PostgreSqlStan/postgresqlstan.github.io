@@ -55,7 +55,7 @@ End with a backslash and a period on a line by itself, or an EOF signal.
 >>
 ```
 
-Copy and paste the data from above (exluding the lines starting with "#") and press enter. Then enter backslash followed by a period.
+Copy and paste the data from above (excluding the lines starting with "#") and press enter. Then enter backslash followed by a period.
 
 Here's what it looked like when I did so:
 
