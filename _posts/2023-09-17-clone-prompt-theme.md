@@ -1,5 +1,5 @@
 ---
-title: "zsh: (TIL) clone a prompt theme"
+title: "TIL (zsh) - clone a prompt theme"
 category: zsh
 header:
   overlay_image: /assets/headers/zsh-bg.jpg

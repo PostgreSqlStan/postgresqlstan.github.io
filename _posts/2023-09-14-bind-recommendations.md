@@ -1,6 +1,6 @@
 ---
 last_modified_at: 2023-09-17
-title: "zsh : Dig into key bindings (macOS)"
+title: "zsh - Dig into key bindings (on macOS)"
 category: zsh
 excerpt: "After a couple years of using zsh and yet another thorough review of key bindings, some observations and recommendations."
 header:
