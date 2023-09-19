@@ -5,7 +5,7 @@ excerpt: "Scope plpgsql parameters with qualified names, e.g. my_function.my_par
 header:
   overlay_image: /assets/headers/pg_bg_header.jpg
   overlay_filter: 0.85
-  teaser: /assets/teasers/psql-teaser.jpg
+  teaser: /assets/teasers/alt-solution.jpg
 category: PostgreSQL
 tags:
   - plpgsql
