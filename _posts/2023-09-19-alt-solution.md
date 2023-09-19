@@ -15,7 +15,7 @@ A recent [post](https://fluca1978.github.io/2023/09/19/PostgreSQLFORAutodeclared
 
 I was blissfully unaware of the danger presented by the `FOR` loop, but have dealt with the scope of variables in plpgsql a few times.
 
-Another reliable way to deal with the issue is using the qualified name of the variables, which is this example would be `a_table.i`, `a_table.j`, `a_table.k`.
+Another reliable way to deal with the issue is using the qualified name of the variables, which for this example would be `a_table.i`, `a_table.j`, `a_table.k`.
 
 ## Example
 
