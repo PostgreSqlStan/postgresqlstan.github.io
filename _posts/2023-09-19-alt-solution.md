@@ -1,5 +1,4 @@
 ---
-# last_modified_at: 2023-01-13
 title: "PostgreSQL - scoping parameters in plpgsql"
 excerpt: "Scope plpgsql parameters with qualified names, e.g. my_function.my_param."
 header:
@@ -25,12 +24,12 @@ CREATE OR REPLACE FUNCTION a_table()
  LANGUAGE plpgsql
 AS $function$
 BEGIN
-FOR ii IN 1 .. 2 LOOP
-    FOR jj IN 1 .. 2 LOOP
-    FOR kk IN 1 .. 2 LOOP
-    a_table.i := ii;
-    a_table.j := jj;
-    a_table.k := kk;
+FOR i IN 1 .. 2 LOOP
+    FOR j IN 1 .. 2 LOOP
+    FOR k IN 1 .. 2 LOOP
+    a_table.i := i;
+    a_table.j := j;
+    a_table.k := k;
     RAISE INFO 'i=%, j=%, k=%', i, j, k;
     RETURN NEXT;
 END LOOP;
