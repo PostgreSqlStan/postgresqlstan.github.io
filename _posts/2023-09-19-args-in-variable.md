@@ -4,7 +4,7 @@ toc_label: "Exploring zsh"
 header:
   overlay_image: /assets/headers/dig-in-public.jpg
   overlay_filter: 0.65
-  teaser: /assets/teasers/teaser-bindlist2.jpg
+  teaser: /assets/teasers/matrix.jpg
   caption: "Archaeology dig at Hierapolis<br>[Original photo by Chris_Parfitt from Morden, Surrey, England](https://commons.wikimedia.org/wiki/File:Archaeology_dig_at_Hierapolis_03.jpg). Licensed under CC BY 2.0, via Wikimedia Commons"
 category: zsh
 toc: true
