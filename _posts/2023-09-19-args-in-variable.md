@@ -51,7 +51,6 @@ I'll also load up some test data into another array:
 
 ```zsh
 data=(line1 '^[[' line3) # don't need much
-print -rl -- $data       # check output
 ```
 
 The `print` command is my primary tool for both making sure things are as I imagined and, when results are unexpected, figuring out what's going on:
@@ -67,8 +66,6 @@ line1
 ^[[
 line3
 ```
-
-With those two variables set, I'm almost ready to start experimenting.
 
 ### Testing with an alias
 
