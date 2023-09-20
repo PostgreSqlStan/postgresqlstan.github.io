@@ -9,6 +9,7 @@ header:
 category: zsh
 toc: true
 toc_sticky: true
+excerpt: "This post is a walk-through of methods I used to learn how to pass arguments stored in a variable to a command."
 ---
 
 # Pass arguments with a variable
