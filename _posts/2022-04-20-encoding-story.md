@@ -1,7 +1,7 @@
 ---
+
 classes: wide
-last_modified_at: 2022-04-20
-updated: 2022-04-20
+last_modified_at: 2023-09-21
 title: "Tangled Up in Encoding"
 category: CLI
 tags:
@@ -189,3 +189,8 @@ Finally, the entire file loaded!
 ### Isn't there an easier way?
 
 I'm glad to learned how to inspect and convert invalid UTF8 bytes sequences. I just wish I didn't have to rely on postgres to find them. There's probably a builtin tool I can use to validate encoding, but, despite a fair amount of searching, I haven't found it yet.
+
+## Related
+
+- [ERROR: INVALID BYTE SEQUENCE – FIX BAD ENCODING IN POSTGRESQL](https://www.cybertec-postgresql.com/en/fix-bad-encoding-postgresql/) by Laurenz Albe
+- [Getting out of SQL_ASCII, part 2](https://tapoueh.org/blog/2010/02/getting-out-of-sql_ascii-part-2/) by Dimitri Fontaine
