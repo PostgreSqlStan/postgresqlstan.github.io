@@ -16,7 +16,7 @@ These are the hoops I jumped through to build Ruby on Ventura. There might be ot
 **Environment:** macOS 13.5.2, default PATH settings, no package manager
 {: .notice }
 
-- download source tarball from: [Ruby Downloads](https://www.ruby-lang.org/en/downloads/)
+- download source tarball (Ruby 3.2.2) from: [Ruby Downloads](https://www.ruby-lang.org/en/downloads/)
 - follow [build instructions](https://docs.ruby-lang.org/en/master/contributing/building_ruby_md.html)
 - resolve errors: [fix #1](#fix-1), [fix #2](#fix-2)
 - repeat last step of build instructions: `make install`
