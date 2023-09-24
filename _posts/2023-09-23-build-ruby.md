@@ -13,7 +13,7 @@ toc_label: "Building Ruby"
 
 These are the hoops I jumped through to build Ruby on Ventura. There might be other solutions.
 
-**Environment:** macOS 13.5.2, default PATH settings, no package manager
+**Environment:** macOS 13.5.2 (Darwin 22.6.0 arm) , default PATH settings, no package manager
 {: .notice }
 
 - download source tarball (Ruby 3.2.2) from: [Ruby Downloads](https://www.ruby-lang.org/en/downloads/)
@@ -38,7 +38,7 @@ I actually had to type `agree` in the terminal. :japanese_goblin:
 
 
 
-When running `make install` (per the build instructions), I encountred an error related to the `pysch` gem. So, I attempted to install and/or update the `pysch` gem:
+When running `make install` (per the build instructions), I encountered an error related to the `pysch` gem. So, I attempted to install and/or update the `pysch` gem:
 
 ```zsh
 gem install --user-install psych
