@@ -90,6 +90,6 @@ The real solution is to learn more about the zsh completions system, starting he
 ### next considerations :thought_balloon:
 
 - considering changing the default behavior to not use the clipboard. Perhaps a `-v` switch to paste.
-- perhaps divide the note template (poorly named `name_format` for now) into sections so the HEADER section can be supressed.
+- perhaps divide the note template (poorly named `name_format` for now) into sections so the HEADER section can be suppressed.
 - ultimately, it would be nice to be able to, via an option, append a note with as few newlines as possible, e.g. `{thing} {thing} {thing}`
 - sorta want some header icon options too.
