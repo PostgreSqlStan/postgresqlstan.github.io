@@ -11,6 +11,18 @@ toc_sticky: true
 toc_label: "Prepend PATH"
 ---
 
+**Update**
+
+Unsurprsingly, there is disagreement. I was sort of hoping for that.
+
+<blockquote class="twitter-tweet" data-conversation="none" data-theme="dark"><p lang="en" dir="ltr">On the contrary, appending ensures that the system versions of utilities don&#39;t get shadowed. If some jerk does<br><br>$ ln -s /bin/rm ~/bin/cat<br><br>I&#39;m sunk if I<br><br>$ PATH=&quot;$HOME/bin:$PATH&quot;<br>$ cat important.txt<br><br>but if it&#39;s appended, I&#39;m safe:<br><br>$ PATH=&quot;$PATH:$HOME/bin&quot;<br>$ cat important.txt</p>&mdash; Tim Chase (@gumnos) <a href="https://twitter.com/gumnos/status/1710427088191156256?ref_src=twsrc%5Etfw">October 6, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+I'll update post when I figure out useful advice for when to prepend and when to append a shell's `PATH`. (I'm still pretty sure there's a valid case for both.)
+
+Meanwhile, take the following advice with a huge grain of salt.
+
+---
+
 Add directories to the *beginning*, not end, of the shell's `PATH` variable.
 
 
