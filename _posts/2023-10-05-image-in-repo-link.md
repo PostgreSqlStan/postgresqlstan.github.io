@@ -6,5 +6,5 @@ tags:
   - git
   - zsh
 header:
-  teaser: /assets/teasers/matrix.jpg
+  teaser: /assets/teasers/repo-images-thumbnail.jpg
 ---

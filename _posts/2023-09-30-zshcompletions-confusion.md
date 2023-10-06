@@ -4,7 +4,7 @@ category: zsh
 header:
   overlay_image: /assets/headers/zsh-bg.jpg
   overlay_filter: 0.8
-  teaser: /assets/teasers/matrix.jpg
+  teaser: /assets/teasers/completions-confusion-teaser.jpg
 classes: wide
 excerpt: "Seems like this should be easy."
 ---
