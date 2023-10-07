@@ -11,15 +11,17 @@ toc_sticky: true
 toc_label: "Prepend PATH"
 ---
 
-**Update**
-
-Unsurprisingly, there is disagreement. (I was sort of hoping for that.)
+**Update**: Unsurprisingly, there is disagreement with this take. (I was sort of hoping for that.)
 
 <blockquote class="twitter-tweet" data-conversation="none" data-theme="dark"><p lang="en" dir="ltr">On the contrary, appending ensures that the system versions of utilities don&#39;t get shadowed. If some jerk does<br><br>$ ln -s /bin/rm ~/bin/cat<br><br>I&#39;m sunk if I<br><br>$ PATH=&quot;$HOME/bin:$PATH&quot;<br>$ cat important.txt<br><br>but if it&#39;s appended, I&#39;m safe:<br><br>$ PATH=&quot;$PATH:$HOME/bin&quot;<br>$ cat important.txt</p>&mdash; Tim Chase (@gumnos) <a href="https://twitter.com/gumnos/status/1710427088191156256?ref_src=twsrc%5Etfw">October 6, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-I'll update post when I figure out useful advice for when to prepend and when to append a shell's `PATH`. (I'm still pretty sure there's a valid case for both.)
+<blockquote class="twitter-tweet" data-conversation="none" data-lang="en" data-theme="dark"><p lang="en" dir="ltr">There is never a good reason to do this. This is not only bad advice, it’s incredibly dangerous. <br><br>I wrote about that here:<a href="https://t.co/1GMFJOK5Sd">https://t.co/1GMFJOK5Sd</a></p>&mdash; unix-ninja (@unix_ninja) <a href="https://twitter.com/unix_ninja/status/1710524943622905878?ref_src=twsrc%5Etfw">October 7, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-Meanwhile, take the following advice with a huge grain of salt.
+I'll update this with a link to a new post once I've figured out how to incorporate these concerns.
+
+For now, after reconsideration, I'll say appending is generally safer and preferred absent a compelling reason to prepend.
+
+*So, take the following advice with a huge grain of salt.*
 
 ---
 
