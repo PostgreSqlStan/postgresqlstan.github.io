@@ -13,7 +13,7 @@ The three bang history features I ever used enough to care about are easily repl
 
 1. Editing the prior command line is just as easy as entering `!!`.
 
-2. The keybinding opt-. (default with zsh on macos) also inserts the last argument of the prior command line, which is easier to type and more convenient.
+2. The keybinding opt-. (default with zsh on macos) also inserts the last argument of the prior command line, which is easier to type and more convenient than `!$`.
 
 3. The `r` command, which I recently discovered, is just as easy to use as `^^`:
 ```
