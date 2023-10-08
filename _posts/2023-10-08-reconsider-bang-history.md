@@ -11,11 +11,11 @@ As much as I like the idea of bang history expansion in the shell, I probably en
 
 The three bang history features I ever used enough to care about are easily replaced:
 
-1. Editing the prior command line is just as easy as entering `!!`.
+- `!!` is harder to enter than pressing <kbd>↑</kbd> once.
 
-2. The keybinding opt-. (default with zsh on macos) also inserts the last argument of the prior command line, which is easier to type and more convenient than `!$`.
+- `!$` - The keybinding <kbd>opt</kbd><kbd>.</kbd> (a default on macos zsh) inserts the last argument of the prior command line, which is easier to type and more convenient.
 
-3. The `r` command, which I recently discovered, is just as easy to use as `^^`:
+- `^^` - The `r` command, which I recently discovered, is just as easy to use:
 ```
 % print yes
 yes
@@ -24,7 +24,7 @@ print no
 no
 ```
 
-All the other bang history features take me longer to remember and carefully enter than just editing the command line in question.
+All the other bang history features take me longer to remember and enter than just editing a prior command.
 
 So, I'm going test drive this option for a while:
 
